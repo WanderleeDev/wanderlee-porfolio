@@ -1,0 +1,26 @@
+---
+import SectionLayout from '../layouts/SectionLayout.astro'
+import Presentation from '../components/astro/Presentation.astro'
+---
+
+<SectionLayout headerPage="Home" color="#33a524">
+  <div class="description">
+    <Presentation/>
+  </div>
+</SectionLayout>
+
+<style lang="scss">
+  .description {
+    position: relative;
+    text-align: center;
+    display: grid;
+    align-self: center;
+    place-items: center;
+    font-family: 'Source Sans Pro', system-ui, sans-serif;
+    font-size: var(--font-xl);
+    font-weight: 900;
+    line-height: 1.4;
+    min-height: calc(100dvh - 5rem);
+    animation:  toUp 0.5s ease-in-out;
+  }
+</style>

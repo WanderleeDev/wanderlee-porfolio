@@ -1,0 +1,19 @@
+---
+import "../assets/scss/style.scss";
+import ViewTransitions from "astro/components/ViewTransitions.astro";
+---
+
+<html lang="es" transition:animate="fade">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="¡Bienvenido a mi portafolio! Soy un programador front-end especializado en Angular, TypeScript, SCSS y Tailwind CSS. Además, estoy explorando React con Astro Framework. Descubre mis proyectos y experiencias, y contáctame para colaboraciones o para saber más sobre mis servicios.">
+    <title>{`Porfolio | 404`}</title>
+    <link transition:persist rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <ViewTransitions />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

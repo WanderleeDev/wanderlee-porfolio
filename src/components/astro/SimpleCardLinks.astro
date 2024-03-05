@@ -1,0 +1,34 @@
+---
+import type { IRoutes } from '../../interfaces/IProject.interface' 
+interface Props {
+  routes: IRoutes
+}
+
+const { routes } = Astro.props
+---
+
+<div class="wrapperLinks">
+  {
+      <a class="wrapperLinks-link" href={routes.demo}>demo</a>
+      <a class="wrapperLinks-link" href={routes.code}>code</a>
+      <a class="wrapperLinks-link" href='/'>mas detalles</a>
+  }
+</div>
+
+<style lang="scss">
+  .wrapperLinks {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    bottom: 0;
+    &-link {
+      width: fit-content;
+      text-transform: capitalize;
+      &:hover {
+        color: #FF6800;
+        text-decoration: underline;
+        font-weight: 600;
+      }
+    }
+  }
+</style>

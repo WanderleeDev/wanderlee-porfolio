@@ -1,0 +1,28 @@
+---
+import { myProjects } from "../../data/myProjects";
+import CardProject from "./CardProject.astro";
+---
+
+<div class="gallery">
+  <div class="gallery-projects">
+    {myProjects.map((project) => <CardProject project={project} />)}
+  </div>
+</div>
+
+<style lang="scss">
+  .gallery {
+    container: gallery / inline-size;
+
+    &-projects {
+      display: grid;
+      gap: 4rem 2rem;
+      justify-items: center;
+    }
+  }
+
+  @container gallery (min-width : 600px) {
+    .gallery-projects {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

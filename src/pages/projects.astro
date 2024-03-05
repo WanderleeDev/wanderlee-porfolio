@@ -1,0 +1,22 @@
+---
+import SectionLayout from "../layouts/SectionLayout.astro";
+import CardProject from "../components/astro/CardProject.astro";
+import { myProjects } from "../data/myProjects"; 
+import GalleryProjects from "../components/astro/GalleryProjects.astro";
+import ExtraProjects from "../components/astro/ExtraProjects.astro";
+
+const proyectDescription =
+  'Mi selección personal de proyectos frontend, donde destaco ejemplos que representan mi enfoque en el desarrollo web orientado al usuario y a la calidad.';
+---
+
+<SectionLayout
+  headerPage="Projectos 🚀"
+  title="Projects 🚀"
+  sectionDescription={proyectDescription}
+  color="#f94848"
+>
+  <GalleryProjects>
+    {myProjects.map((project) => <CardProject project={project} />)}
+  </GalleryProjects>
+  <ExtraProjects />
+</SectionLayout>

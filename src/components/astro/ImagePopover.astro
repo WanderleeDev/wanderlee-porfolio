@@ -1,0 +1,71 @@
+---
+import Image from "astro/components/Image.astro";
+interface Props {
+  id: number
+  imageSrc: string
+  alt: string
+}
+
+const { imageSrc, alt, id } = Astro.props
+const newID = `${crypto.randomUUID().slice(0,5)}${id}`
+---
+
+<label class="card" for={`photo-${newID}`}>
+  <input
+    hidden
+    class=""
+    type="button"
+    value=""
+    id={`photo-${newID}`}
+    popovertarget={`popover-${newID}`}
+  />
+  <Image
+    class="card-image"
+    src={imageSrc}
+    alt={alt}
+    width="300"
+    height="200"
+  />
+
+  <div class="position-center popover" id={`popover-${newID}`} popover>
+    <Image
+      class="popover-image"
+      src={imageSrc}
+      widths={[240, 540, 720]}
+      sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px,`}
+      alt={alt}
+      width='540'
+      height='400'
+    />
+  </div>
+</label>
+
+<style lang="scss">
+  .card {
+    width: fit-content;
+
+    &-image {
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      cursor: zoom-in;
+    }
+  }
+
+  .popover {
+    width: 60rem;
+    height: 40rem;
+    animation: toUp .2s linear;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    &::backdrop {
+      background-color: hsla(0, 0%, 0%, 0.5);
+      backdrop-filter: blur(.2rem);
+    }
+    
+    &-image {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16/9;
+      cursor: zoom-out;
+    }
+  }
+</style>

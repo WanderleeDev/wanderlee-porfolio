@@ -1,0 +1,27 @@
+---
+import byteCode from "../../assets/images/binaryCode.webp";
+import { getImage } from "astro:assets";
+import Image from "astro/components/Image.astro";
+
+const optimizedByteCode = await getImage({
+  src: byteCode,
+  formart: "avif",
+});
+---
+
+<Image
+  class="banner-byteCode"
+  src={optimizedByteCode.src}
+  width={1000}
+  height={90}
+  alt="mi foto"
+/>
+
+<style lang="scss">
+  .banner-byteCode {
+    width: 100%;
+    opacity: 0.4;
+    margin: 1rem 0;
+    min-height: 4.5rem;
+  }
+</style>

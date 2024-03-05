@@ -1,0 +1,37 @@
+---
+import { Icon } from "astro-icon/components";
+interface Props {
+  technologies: string[]
+}
+
+const { technologies } = Astro.props
+---
+
+{
+  technologies.length > 0 && (
+    <figure class="listIcons">
+      {technologies.map((tech) => (
+        <Icon
+          class="listIcons-icon"
+          name={`myTech/${tech}`}
+          width={25}
+          height={25}
+          title={tech}
+        />
+      ))}
+    </figure>
+  )
+}
+
+<style lang="scss">
+    .listIcons {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.5rem;
+
+      &-icon {
+        width: fit-content;
+      }
+    }
+</style>

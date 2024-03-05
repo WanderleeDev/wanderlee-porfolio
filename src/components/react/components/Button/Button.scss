@@ -1,0 +1,33 @@
+.buttons {
+  display: flex;
+  gap: 2rem;
+  margin: 3rem 0 1.5rem 0;
+  padding-block: .7rem;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.267);
+  backdrop-filter: blur(.2rem);
+
+  &-btn {
+    font-size: 1rem;
+    min-width: 8rem;
+    min-height: 2rem;
+    padding: .3rem .5rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: background-color .1s linear, color .1s linear;
+
+    &:hover {
+      @extend .activeFilter
+    }
+  }
+}
+
+.activeFilter {
+  font-weight: 600;
+  color: var(--high-light);
+  background-color: #0000003a;
+  border-radius: .5rem;
+  border: 0.15rem solid rgba(255, 255, 255, 0.493);
+}

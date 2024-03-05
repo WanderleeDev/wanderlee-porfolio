@@ -1,0 +1,85 @@
+---
+import "../assets/scss/style.scss";
+//  Components
+import Footer from "../components/astro/Footer.astro"; 
+import HeaderPage from "../components/astro/HeaderPage.astro";
+import Navbar from "../components/astro/Navbar.astro";
+//  Fonts
+import "@fontsource/saira-stencil-one";
+import "@fontsource/source-sans-pro";
+import "@fontsource/tourney/100.css";
+//  Astro utilities
+import ViewTransitions from "astro/components/ViewTransitions.astro";
+import { getImage } from "astro:assets";
+import backgroundMain from "../assets/images/pattern.webp";
+
+interface Props {
+  headerPage: string;
+}
+
+const optimizedBackgroundMain = await getImage({
+  src: backgroundMain,
+  format: "webp",
+});
+
+const { headerPage } = Astro.props;
+---
+
+<html lang="es" transition:animate="fade">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="index, follow">
+    <meta
+      name="description"
+      content="¡Bienvenido a mi portafolio! Soy un programador front-end especializado en Angular, TypeScript, SCSS y Tailwind CSS. Además, estoy explorando React con Astro Framework. Descubre mis proyectos y experiencias, y contáctame para colaboraciones o para saber más sobre mis servicios."
+    />
+    <title>{`Porfolio | ${headerPage ?? ""}`}</title>
+    <link
+      transition:persist
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <ViewTransitions />
+  </head>
+  <body class="hero">
+    <HeaderPage />
+    <main
+      class="hero-main"
+      style={`background-image: url(${optimizedBackgroundMain.src});`}
+    >
+      <Navbar />
+      <slot />
+      <Footer />
+    </main>
+    <style lang="scss">
+      .hero {
+        display: grid;
+        @media (width >= 1000px) {
+          min-height: 100dvh;
+          grid-template-columns: min(50vw, 35rem) 1fr;
+        }
+
+        &-main {
+          display: grid;
+          background-color: #ffffff;
+          background-attachment: fixed;
+          background-size: cover;
+          @media (width >= 300px) {
+            padding-inline: 1rem;
+          }
+          @media (width >= 1000px) {
+            gap: var(--spacing);
+            height: 100dvh;
+            overflow-y: scroll;
+          }
+          @media (width >= 1400px) {
+            padding-inline: var(--spacing);
+          }
+        }
+      }
+    </style>
+  </body>
+</html>

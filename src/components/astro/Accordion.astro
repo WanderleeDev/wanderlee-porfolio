@@ -1,0 +1,90 @@
+---
+import ImagePopover from "./ImagePopover.astro";
+import Heading from "./Heading.astro";
+import type { IStudy } from "../../interfaces/IStudy.interface";
+
+interface Props {
+  dataAccordion: IStudy;
+  name: string;
+}
+
+const {
+  dataAccordion: { description, images, title }, name
+} = Astro.props;
+---
+
+<details class="accordion" name={name}>
+  <summary class="accordion-title">
+    <Heading headingName={title} typeHeading="h3"/>
+  </summary>
+  <p class="accordion-description">{description}</p>
+  <div class="accordion-content">
+  <slot name="content-extra" />
+  {
+    images.length > 0 && (
+      <div class="accordion-grid">
+        {images.map((img, i) => (
+          <ImagePopover imageSrc={img} alt="" id={i} />
+        ))}
+      </div>
+    )
+  }
+
+  </div>
+</details>
+
+<style lang="scss">
+  .accordion {
+    --accent-clr : #ee6307;
+    border-bottom: dotted .1rem;
+
+    &[open] .accordion-title::after {
+      content: "−";
+      color: var(--accent-clr, #ee6307);
+      box-shadow: 0 1px 4px #ee630786;
+      background-color: #ee63071a;
+    }
+
+    &:not([open]) .accordion-title::after {
+      content: "+";
+    }
+
+    &[open] .accordion-content {
+      animation: simpleFade .3s linear forwards;
+    }
+
+    &-title {
+      font-size: var(--font-md);
+      font-family: 'Saira Stencil One', system-ui;
+      letter-spacing: .1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 100;
+      padding-block: 2.5rem;
+      cursor: pointer;
+
+
+      &::marker {
+        content: none;
+      }
+
+      &::after {
+        font-size: 1rem;
+        display: grid;
+        place-content: center;
+        width: 2rem;
+        height: 2rem ;
+        border-radius: 50%;
+        border: solid .1rem currentColor;
+      }
+    }
+
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+      padding-block: 1rem 2rem;
+      transition: opacity .15s linear;
+    }
+  }
+</style>

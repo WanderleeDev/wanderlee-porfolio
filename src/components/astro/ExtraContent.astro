@@ -1,0 +1,89 @@
+---
+import { learningToFuture } from "../../data/myTech";
+import { Icon } from "astro-icon/components";
+
+const expectations = [
+  "Asegurar mi primer empleo en la industria tecnológica.",
+  "Aprender, comprender y luego transmitir ese conocimiento.",
+  'Repasar siempre los conocimientos base es fundamental para comprender los mas avanzados.',
+  'Mantenerme actualizado con las últimas novedades del mundo Tech.',
+  'Fomentar un buen ambiente laboral y trabajo en equipo.',
+  'Estar siempre dispuesto a aceptar nuevos retos.'
+];
+---
+
+<div  class="contentExtra">
+  <ul class="expectations">
+    {expectations.map((item) => <li class="expectations-item">{item}</li>)}
+  </ul>
+  <figure class="technologies">
+    <figcaption class="technologies-title">
+      Tecnologias que me gustria aprender a futuro
+    </figcaption>
+    <div class="technologies-icons">
+      {
+        learningToFuture.map((technology) => (
+          <Icon
+            style={{ color: technology.color }}
+            class="technologies-icon"
+            name={`technologies/${technology.name}`}
+            width={32}
+            height={32}
+            title={technology.name}
+          />
+        ))
+      }
+    </div>
+  </figure>
+</div>
+
+<style lang="scss">
+  .contentExtra {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .expectations {
+    font-size: 1rem;
+
+    &-item {
+      list-style-type: upper-roman;
+      list-style-position: inside;
+
+      &::marker {
+        color: #ee6307;
+      }
+    }
+  }
+
+  .technologies {
+    padding-bottom: 2.5rem;
+
+    &-title {
+      color: #ee6307;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    &-icons {
+      display: flex;
+      gap: 2rem;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 1rem 1rem 1rem 0;
+    }
+
+    &-icon {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      aspect-ratio: 1/1;
+      transition: transform 0.2s linear;
+
+      &:hover {
+        filter: drop-shadow(-2px 0 9px currentColor);
+        transform: translateY(-0.4rem);
+      }
+    }
+  }
+</style>

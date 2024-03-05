@@ -1,0 +1,69 @@
+---
+//  Components
+import { Icon } from "astro-icon/components";
+interface Props {
+  customStyles?: Record<string, string>;
+  ariaLabel: string;
+  iconName?: string;
+}
+
+const { customStyles, ariaLabel, iconName } = Astro.props;
+---
+
+<button style={customStyles} class="btnBasic" aria-label={ariaLabel}>
+  {ariaLabel ?? 'Empty message'}
+  {
+    iconName && (
+      <Icon
+        class="btnBasic-icon"
+        name={iconName}
+        aria-hidden="true"
+        width={30}
+        height={30}
+      />
+    )
+  }
+</button>
+
+<style lang="scss">
+  button {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    place-items: center;
+    width: fit-content;
+    min-width: 12.5rem;
+    padding: 1rem;
+    font-size: var(--font-base, 1.25rem);
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btnBasic {
+    background: #fff;
+    color: #383b3a;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.3rem;
+    box-shadow: 0 0.2rem #ccc;
+    transition: transform 0.1s;
+
+    &:hover {
+      transform: translateY(0.1rem);
+      box-shadow: 0 0.15rem #ccc;
+    }
+
+    &:active {
+      transform: translateY(0.2rem);
+      box-shadow: 0 0 0.1rem #ccc;
+    }
+
+    &:focus-visible {
+      outline-offset: 0.2rem;
+      outline: solid 0.15rem;
+    }
+
+    &-icon {
+      padding-left: 0.5rem;
+    }
+  }
+</style>

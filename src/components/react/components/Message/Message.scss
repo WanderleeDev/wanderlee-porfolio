@@ -1,0 +1,16 @@
+.message {
+  --font-size : .7rem;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  font-size: var(--font-size, .7rem);
+  letter-spacing: .1rem;
+  font-weight: 700;
+
+  &-icon {
+    color: rgb(250, 208, 208);
+    font-size: calc(var(--font-size, .7rem) + .2rem);
+  }
+}

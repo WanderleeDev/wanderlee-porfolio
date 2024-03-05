@@ -1,0 +1,63 @@
+---
+import { Picture } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import myPhoto from "../../assets/images/myPhoto.webp"
+---
+
+<figure class="card">
+  
+  <Picture
+    class="card-img u-min-shadow"
+    src={myPhoto}
+    width={200}
+    height={200}
+    formats={['avif', 'webp', 'png']}
+    loading="eager"
+    alt="mi foto"
+  />
+  <figcaption class="card-description">
+    <h1 class="card-title">Wanderlee Max</h1>
+    <span class="card-work">
+      <Icon class="card-icon" name={'extras/peru'} width={20} height={20}/>
+      lima - Perú
+    </span>
+  </figcaption>
+</figure>
+
+<style lang="scss">
+  .card {
+    display: grid;
+    place-content: center;
+    gap: 2rem;
+
+    &-img {
+      margin-inline: auto;
+      border-radius: 50%;
+      object-position: 50% 15%;
+    }
+
+    &-description {
+      position: relative;
+      text-align: center;
+      line-height: 1.5;
+    }
+    
+    &-title {
+      font-size: var(--font-lg);
+      letter-spacing: .1rem;
+      text-align: center;
+    }
+
+    &-work {
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Source Sans Pro', system-ui, sans-serif;
+    }
+
+    &-icon {
+      width: fit-content;
+    }
+  }
+</style>

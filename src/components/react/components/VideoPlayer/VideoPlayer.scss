@@ -1,0 +1,67 @@
+.video-wrapper {
+  position: relative;
+  max-width: 40rem;
+  height: 30rem;
+  border-radius: .5rem;
+  overflow: hidden;
+  margin: 4rem auto;
+  @media screen and (width >= 1000px) {
+    max-width: 100%;
+  }
+
+  &:hover::after,
+  &:hover .video-btn {
+    opacity: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity .15s linear;
+  }
+}
+
+.video {
+  background-color: black;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+  height: 100%;
+
+  &-controls {
+    display: flex;
+    gap: 1rem;
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  &-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    padding: .5rem;
+    transition: transform .2s linear, opacity .2s linear, .2s background-color linear;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center center;
+    opacity: 0;
+    border-radius: 50%;
+    background-color: rgba(240, 248, 255, 0.418);
+    backdrop-filter: blur(.1rem);
+    
+    &:hover {
+      transform: scale(.95);
+      outline: .2rem solid  #ffffffd0;
+      outline-offset: .3rem;
+    }
+
+    &:active {
+      transform: scale(1.1);
+      background-color: #fff;
+    }
+  }
+}

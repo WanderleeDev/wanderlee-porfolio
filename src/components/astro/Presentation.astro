@@ -1,0 +1,92 @@
+---
+
+---
+<div class="textGradient">
+  <h2 class="textGradient-title">
+    Hola 👋 mi nombre es Wanderlee Max,
+    <span class="textGradient-work">Frontend Developer.</span>
+  </h2>
+  <div class="textGradient-links">
+    <a
+      class="textGradient-link"
+      href="/src/docs/example.pdf"
+      download="wanderlee-cv.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="descargar cv"
+      title="descargar cv"
+    >
+      Descargar cv
+    </a>
+  
+    <a
+      class="textGradient-link"
+      href="ruta/al/archivo/mi-archivo.pdf"
+      download="mi-archivo.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Ver linkedin"
+      title="Ver linkedin"
+    >
+      Ver linkedin
+    </a>
+  </div>
+</div>
+
+<style lang="scss">
+  .textGradient {
+    --color-gradient1: #42d392;
+    --color-gradient2: #647eff;
+    --gradient: linear-gradient(135deg, var(--color-gradient1), var(--color-gradient2));
+    
+    display: grid;
+    gap: 3rem;
+
+    &-title {
+      font-family: "Source Sans Pro", system-ui, sans-serif;
+      font-weight: 500;
+    }
+
+    &-work {
+      font-family: "Saira Stencil One", system-ui;
+      font-size: var(--font-2xl);
+      font-weight: 900;
+      animation: textShine 8s ease-in-out infinite alternate;
+      background: var(--gradient);
+      background-position: 0 0;
+      background-size: 400% 100%;
+      color: transparent;
+      background-clip: text;
+    }
+
+    &-links {
+      font-size: var(--font-base);
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    &-link {
+      position: relative;
+      color: #00b894;
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: .2rem;
+        width: 100%;
+        bottom: 0;
+        transform-origin: left;
+        transition: transform .2s linear;
+        background: var(--gradient);
+        transform: scaleX(0.15);
+      }
+
+      &:hover::before {
+        transform: scale(1);
+      }
+    }
+  }
+</style>

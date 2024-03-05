@@ -1,0 +1,50 @@
+---
+import { getImage } from "astro:assets";
+import PersonalCard from "./PersonalCard.astro";
+import Technologies from "../react/components/Technologies";
+import backgroundBlur from "../../assets/images/blurBackground.webp";
+
+const optimizedbackgroundBlur = await getImage({
+  src: backgroundBlur,
+  format: "webp",
+});
+---
+
+<header
+  class="hero-header"
+  style={`background-image: url(${optimizedbackgroundBlur.src});`}
+  transition:persist
+  transition:name="header"
+>
+  <div class="bg-grid">
+    <PersonalCard />
+    <Technologies client:idle />
+  </div>
+</header>
+
+<style lang="scss">
+  .hero-header {
+    position: relative;
+    overflow-x: hidden;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover, 150%;
+    height: 100dvh;
+    @media (width >= 1000px) {
+      height: initial;
+    }
+  }
+  
+  .bg-grid {
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    padding-top: 3rem;
+    background: radial-gradient(#202020 1px, #1d1816d2 1px);
+    background-size: 3.5px 3.5px;
+
+    @media (width >= 1000px) {
+      padding-top: var(--spacing, 5rem);
+    }
+  }
+</style>

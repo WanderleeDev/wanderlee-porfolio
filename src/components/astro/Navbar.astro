@@ -1,0 +1,104 @@
+---
+import { Icon } from "astro-icon/components";
+// import ThemeIcon from '@components/astro/ThemeIcon.astro'
+
+const navItems = ["projects", "about", "contact"];
+---
+
+<nav class="nav u-shadow-2" transition:name="navbar">
+  <ul class="nav-list" data-link="home">
+    <li
+      class="nav-listItem"
+      data-link="home"
+    >
+      <a class="nav-listLink" href="/" rel="ir a la página principal" title="ir a la página principal">
+        <Icon aria-hidden="true" name={`extras/home`} width={25} height={25} />
+      </a>
+    </li>
+    {
+      navItems.map((item) => (
+        <li class="nav-listItem" data-link={item}>
+          <a class="nav-listLink" href={item} rel={`ir a ${item}`} title={`ir a ${item}`}>
+            <Icon aria-hidden="true" name={`extras/${item}`} width={25} height={25} />
+          </a>
+        </li>
+      ))
+    }
+    <!-- <ThemeIcon /> -->
+  </ul>
+</nav>
+
+<style lang="scss">
+  .nav {
+    position: fixed;
+    max-width: fit-content;
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.267);
+    backdrop-filter: blur(.2rem);
+    padding: 0.5rem 1rem;
+    border-radius: .5rem;
+    z-index: 10;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    @media (width >= 1000px) {
+      // right: 5rem;
+      top: 5rem;
+      transform: translateY(0%);
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: row;
+      flex-direction: column;
+      gap: 2rem;
+      @media (width >= 1000px) {
+        flex-direction: row;
+      }
+    }
+
+    &-check {
+      appearance: none;
+    }
+
+    &-listItem {
+      position: relative;
+      text-transform: capitalize;
+      font-weight: 600;
+      transition: color 0.15s linear;
+      border: solid .15rem #0000003a;
+      border-radius: .5rem;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.3);
+
+      &:hover {
+        color: var(--high-light);
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+
+      &::after {
+        width: max-content;
+        position: absolute;
+        content: attr(data-link);
+        font-size: 0.8rem;
+        letter-spacing: 0.1rem;
+        color: inherit;
+        backdrop-filter: blur(0.2rem);
+        padding: 0.2rem;
+        border-radius: 0.3rem;
+        background-color: #00000067;
+        left: 50%;
+        transform: translate(-50%, .7rem);
+        opacity: 0;
+        transition: opacity 0.2s linear;
+      }
+    }
+
+    &-listLink {
+      padding: 0.5rem;
+    }
+  }
+</style>

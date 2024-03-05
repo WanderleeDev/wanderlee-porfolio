@@ -1,0 +1,108 @@
+---
+import BasicLayout from "../layouts/BasicLayout.astro";
+import { getImage } from "astro:assets";
+import notFoundImage from "../assets/images/404.webp";
+
+const { href } = Astro.url;
+const optimizedImage404 = await getImage({
+  src: notFoundImage,
+  format: "webp",
+});
+---
+
+<BasicLayout>
+  <section class="notFound">
+    <div
+      class="notFound-WrapperImg"
+      style={`background-image: url(${optimizedImage404.src});`}
+    >
+    </div>
+    <h1 class="notFound-title">NOT FOUND</h1>
+    <p class="notFound-description">
+      The route you want to access does not exist:
+      <span class="notFound-url">
+        {href}
+      </span>
+    </p>
+    <a
+      aria-label="Back to home"
+      title="Back to home"
+      href="/"
+      class="notFound-btn"
+      type="button"
+      title="to home"
+      aria-label="to home"
+    >
+      Back to Home
+    </a>
+  </section>
+</BasicLayout>
+
+<style lang="scss">
+  .notFound {
+    display: grid;
+    place-content: center;
+    place-content: center;
+    background-color: #040205;
+    height: 100dvh;
+    color: #fff;
+
+    &-WrapperImg {
+      position: relative;
+      aspect-ratio: 1/1;
+      max-width: 40rem;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-color: #040205;
+    }
+
+    &-img {
+      aspect-ratio: 1/1;
+    }
+
+    &-title {
+      font-weight: 600;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    &-description {
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    &-url {
+      display: block;
+      margin: .5rem 0 0 .5rem;
+      text-decoration: underline;
+      cursor: not-allowed;
+      color: var(--high-light, #ffd900);
+    }
+
+    &-btn {
+      margin-inline: auto;
+      width: fit-content;
+      color: #303030;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      background-image: linear-gradient(to right, #f51dc1, #2dfafa);
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+</style>

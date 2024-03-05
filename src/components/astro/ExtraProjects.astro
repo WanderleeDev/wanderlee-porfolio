@@ -1,0 +1,31 @@
+---
+import ExtraCard from "./ExtraCard.astro";
+import Heading from "./Heading.astro";
+import LogoAngularAnimation from "./LogoAngularAnimation.astro";
+import ReactLogoAnimated from "./ReactLogoAnimated.astro";
+---
+
+<article class="projectsExtra">
+  <Heading headingName="Proyectos extra" typeHeading="h2" color="#F94848"></Heading>
+  <ExtraCard
+    title="Angular"
+    background="linear-gradient(to left, #3a6186, #89253e)"
+  >
+    <LogoAngularAnimation />
+  </ExtraCard>
+
+  <ExtraCard
+    title="React"
+    background="linear-gradient(to right, #4b79a1, #283e51);"
+  >
+    <ReactLogoAnimated />
+  </ExtraCard>
+</article>
+
+<style lang="scss">
+  .projectsExtra {
+    padding-top: 8rem;
+    display: grid;
+    gap: 4rem;
+  }
+</style>

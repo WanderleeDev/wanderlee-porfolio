@@ -1,0 +1,21 @@
+:where(h1, h2, h3, h4, h5, h6) {
+  font-family: 'Saira Stencil One', system-ui;
+  font-weight: 100;
+  letter-spacing: .1rem;
+}
+
+:where(:not(h1, h2, h3, h4, h5, h6)) {
+  font-family: 'Source Sans Pro', system-ui, sans-serif;
+}
+
+::selection {
+  background-color: rgba(255, 166, 0, 0.4);
+}
+
+body {
+  font-size: var(--font-base);
+}
+
+img {
+  background-color: #d8d8d8;
+}
