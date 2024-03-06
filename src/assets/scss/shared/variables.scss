@@ -14,8 +14,11 @@
   // Colors
   --high-light: #ffd900;
   --clr-letter-primary: #000;
-  ---clr-letter-secondary: #4F4F4F;
-  --clr-background: #fffff7; 
+  --clr-letter-secondary: #4F4F4F;
+  --clr-background: #fffff7;
+  --color-gradient1: #42d392;
+  --color-gradient2: #647eff;
+  --gradient: linear-gradient(135deg, var(--color-gradient1), var(--color-gradient2)); 
 
   //  Spacing
   --spacing: 5rem;

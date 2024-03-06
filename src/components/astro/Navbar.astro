@@ -7,19 +7,31 @@ const navItems = ["projects", "about", "contact"];
 
 <nav class="nav u-shadow-2" transition:name="navbar">
   <ul class="nav-list" data-link="home">
-    <li
-      class="nav-listItem"
-      data-link="home"
-    >
-      <a class="nav-listLink" href="/" rel="ir a la página principal" title="ir a la página principal">
+    <li class="nav-listItem" data-link="home">
+      <a
+        class="nav-listLink"
+        href="/"
+        rel="ir a la página principal"
+        title="ir a la página principal"
+      >
         <Icon aria-hidden="true" name={`extras/home`} width={25} height={25} />
       </a>
     </li>
     {
       navItems.map((item) => (
         <li class="nav-listItem" data-link={item}>
-          <a class="nav-listLink" href={item} rel={`ir a ${item}`} title={`ir a ${item}`}>
-            <Icon aria-hidden="true" name={`extras/${item}`} width={25} height={25} />
+          <a
+            class="nav-listLink"
+            href={item}
+            rel={`ir a ${item}`}
+            title={`ir a ${item}`}
+          >
+            <Icon
+              aria-hidden="true"
+              name={`extras/${item}`}
+              width={25}
+              height={25}
+            />
           </a>
         </li>
       ))
@@ -34,9 +46,9 @@ const navItems = ["projects", "about", "contact"];
     max-width: fit-content;
     height: fit-content;
     background-color: rgba(0, 0, 0, 0.267);
-    backdrop-filter: blur(.2rem);
+    backdrop-filter: blur(0.2rem);
     padding: 0.5rem 1rem;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     z-index: 10;
     right: 2rem;
     top: 50%;
@@ -66,8 +78,8 @@ const navItems = ["projects", "about", "contact"];
       text-transform: capitalize;
       font-weight: 600;
       transition: color 0.15s linear;
-      border: solid .15rem #0000003a;
-      border-radius: .5rem;
+      border: solid 0.15rem #0000003a;
+      border-radius: 0.5rem;
       color: #fff;
       background-color: rgba(0, 0, 0, 0.3);
 
@@ -91,7 +103,7 @@ const navItems = ["projects", "about", "contact"];
         border-radius: 0.3rem;
         background-color: #00000067;
         left: 50%;
-        transform: translate(-50%, .7rem);
+        transform: translate(-50%, 0.7rem);
         opacity: 0;
         transition: opacity 0.2s linear;
       }
@@ -99,6 +111,11 @@ const navItems = ["projects", "about", "contact"];
 
     &-listLink {
       padding: 0.5rem;
+      &:focus {
+        outline-offset: 0.3rem;
+        outline: solid 0.15rem white;
+        border-radius: 0.2rem;
+      }
     }
   }
 </style>

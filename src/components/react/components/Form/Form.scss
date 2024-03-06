@@ -2,12 +2,13 @@
   --hight-light-form : #851ebf;
   --background-input: #f8eeff;
 
-  color: #1613289c;
-  background-color: #161328;
-  margin-inline: auto;
   display: grid;
   gap: 0 1rem;
+  margin-inline: auto;
+  width: 100%;
   grid-template-columns: 1fr auto;
+  color: #1613289c;
+  background-color: #161328;
   border: solid 1px;
   padding: 1rem;
   border-radius: .5rem;
@@ -25,7 +26,6 @@
     font-weight: 600;
     position: absolute;
     padding-top: .4rem;
-    // padding-bottom: .3rem;
   }
 
   &-input {

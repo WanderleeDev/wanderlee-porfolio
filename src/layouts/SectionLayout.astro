@@ -20,7 +20,10 @@ const { title, headerPage, color, sectionDescription } = Astro.props;
         <p class="section-description">{sectionDescription}</p>
       )
     }
-    <slot />
+    <div class="section-content">
+      <slot />
+
+    </div>
   </section>
 </BaseLayout>
 
@@ -32,6 +35,12 @@ const { title, headerPage, color, sectionDescription } = Astro.props;
     &-description {
       font-size: var(--font-base);
       margin-block: 2rem;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
     }
   }
 </style>

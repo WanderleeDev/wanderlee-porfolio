@@ -1,0 +1,77 @@
+---
+type contactTyoe = 'Gmail' | 'Linkedin' | 'WhatsApp'
+
+interface IContact {
+  name: string
+  link: string
+}
+
+const contacts: IContact[] = [
+  {
+    name: "Gmail",
+    link: "mailto:wanderleedev@gmail.com",
+  },
+  {
+    name: "Linkedin",
+    link: "https://www.linkedin.com/in/wanderlee-max/",
+  },
+  {
+    name: "WhatsApp",
+    link: "whatsapp://send?phone=+52972299736",
+  },
+];
+---
+
+<div class="extraContact">
+  <p class="extraContact-description">
+    Tambien puedes comincarme conmigo mediante mis otras redes:
+  </p>
+  <ul class="extraContact-list">
+    {
+      contacts.map(({link, name}) => (
+        <li class="extraContact-contact">
+          <a 
+            class="extraContact-link link" 
+            href={link}
+          >
+            {name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style lang="scss">
+  .extraContact {
+    display: grid;
+    gap: 1rem;
+
+    &-list {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    &-link {
+      color: #CD3CA3;
+      font-weight: 600;
+      position: relative;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        background: #CD3CA3;
+        height: .2rem;
+        width: 100%;
+        bottom: 0;
+        transform-origin: left;
+        transform: scaleX(.15);
+        transition: transform .2s linear;
+      }
+      
+      &:hover::before {
+        transform: scale(1);
+      }
+    }
+  }
+</style>

@@ -1,10 +1,12 @@
 ---
 import SectionLayout from "../layouts/SectionLayout.astro"
 import Form from '../components/react/components/Form'
+import ExtraContact from '../components/astro/ExtraContact.astro'
 
-const contactDescription = '"Puedes contactarme a través de mi correo electrónico: [tu correo electrónico] o conectarte conmigo en LinkedIn: [tu perfil de LinkedIn]. Estoy abierto a colaboraciones y nuevas oportunidades de desarrollo web."'
+const contactDescription = 'Pongamonos en comunicación para de desarrollar un proyecto en conjunto y compartir conocimientos. Estare a la espera de su contacto.'
 ---
 
 <SectionLayout title="contacme 🛰️" headerPage="Contact" color="#CD3CA3" sectionDescription={contactDescription}>
   <Form client:idle/>
+  <ExtraContact />
 </SectionLayout>
