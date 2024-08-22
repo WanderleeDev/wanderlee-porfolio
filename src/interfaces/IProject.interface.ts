@@ -3,6 +3,7 @@ export interface IProject {
   links: IRoutes
   deploy: string
   description: string
+  image: string
   technologies: string[]
 }
 

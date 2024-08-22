@@ -8,7 +8,7 @@ interface Props {
 }
 
 const {
-  project: { description, technologies, title, links },
+  project: { description, technologies, title, links, image },
 } = Astro.props;
 ---
 
@@ -16,7 +16,7 @@ const {
   <div class="card-link">
     <Image
       class="card-img"
-      src={'https://www.dropbox.com/scl/fi/mo9pndme7qffroy6ce8gj/backStageCover.webp?rlkey=thb01ghyvjzm3t5z7cf6a9bk1&raw=1'}
+      src={image}
       width={396}
       height={252}
       alt={title}

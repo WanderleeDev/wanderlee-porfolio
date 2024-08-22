@@ -5,11 +5,12 @@ export const myProjects: IProject[] = [
     title: 'Ecomerce',
     description: 'Ecommerce con sistema de autenticación, carrito de compras, notificación y uso de local Storage',
     links: {
-      demo: 'https://github.com/',
-      code: 'https://github.com/'
+      demo: 'https://clior.vercel.app/',
+      code: 'https://github.com/WanderleeDev/clior-ecommerce'
     },
-    technologies: ['angular', 'sass', 'typeScript'],
-    deploy: 'vercel'
+    technologies: ['angular', 'sass', 'typeScript', 'flowbite'],
+    deploy: 'vercel',
+    image: 'https://www.dropbox.com/scl/fi/m6vzt3tx6nuuhvkxgiyw3/clior.webp?rlkey=1ph4dond6v40m47ys5y0wlb4a&st=f6sn5xlr&raw=1'
   },
   {
     title: 'Ubuntu desktop',
@@ -18,8 +19,9 @@ export const myProjects: IProject[] = [
       demo: 'https://github.com/',
       code: 'https://github.com/WanderleeDev/ubuntu-desktop'
     },
-    technologies: ['angular', 'tailwindCss', 'typeScript'],
-    deploy: 'netlify'
+    technologies: ['angular', 'tailwindCss', 'typeScript', 'ngrx'],
+    deploy: 'netlify',
+    image: 'https://www.dropbox.com/scl/fi/3vx4bw7gmkdpy3lzj4qe4/ubuntu.webp?rlkey=jnsbbqkxs74nn3wlq0wporkvg&st=pd1f8swy&raw=1'
   },
   {
     title: 'Retro Blog',
@@ -28,8 +30,9 @@ export const myProjects: IProject[] = [
       demo: 'https://retro-blog-two.vercel.app/',
       code: 'https://github.com/WanderleeDev/Astro-retro-blog'
     },
-    technologies: ['angular', 'css', 'typeScript'],
-    deploy: 'vercel'
+    technologies: ['astro', 'css', 'typeScript'],
+    deploy: 'vercel',
+    image: 'https://www.dropbox.com/scl/fi/5469s60a6i7kkrh2snodt/retro-blog.webp?rlkey=y4fzo2u4d837l5ck6iraxqfyn&st=5z3k3hd8&raw=1'
   },
   {
     title: 'Text to Speech',
@@ -39,6 +42,7 @@ export const myProjects: IProject[] = [
       code: 'https://github.com/WanderleeDev/text-to-speech/tree/main'
     },
     technologies: ['html', 'tailwindCss', 'typeScript'],
-    deploy: 'vercel'
+    deploy: 'vercel',
+    image: 'https://www.dropbox.com/scl/fi/e9malpqyvbfg9l7vr2ziq/text-to-speech.webp?rlkey=ure8t2dlw11mw1tpgsy9lzlum&st=qn26ra5i&raw=1'
   }
 ]
