@@ -1,6 +1,5 @@
 ---
 import { Icon } from "astro-icon/components";
-// import ThemeIcon from '@components/astro/ThemeIcon.astro'
 
 const navItems = ["projects", "about", "contact"];
 ---
@@ -36,25 +35,32 @@ const navItems = ["projects", "about", "contact"];
         </li>
       ))
     }
-    <!-- <ThemeIcon /> -->
   </ul>
 </nav>
 
 <style lang="scss">
   .nav {
     position: fixed;
-    max-width: fit-content;
     height: fit-content;
-    background-color: rgba(0, 0, 0, 0.267);
+    background-color: rgba(151, 114, 114, 0.288);
     backdrop-filter: blur(0.2rem);
-    padding: 0.5rem 1rem;
     border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
     z-index: 10;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    @media (width >= 600px) {
+      max-width: fit-content;
+      background-color: rgba(0, 0, 0, 0.267);
+      right: 2rem;
+      transform: translateY(-50%);
+      inset: 50% 0 auto auto;
+    }
+    
     @media (width >= 1000px) {
-      // right: 5rem;
       top: 5rem;
       transform: translateY(0%);
     }
@@ -62,8 +68,15 @@ const navItems = ["projects", "about", "contact"];
     &-list {
       display: flex;
       flex-direction: row;
-      flex-direction: column;
+      justify-content: space-between;
       gap: 2rem;
+      width: 100%;
+
+
+      @media (width >= 600px) {
+        flex-direction: column;
+      }
+
       @media (width >= 1000px) {
         flex-direction: row;
       }

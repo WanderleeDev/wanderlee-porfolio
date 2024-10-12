@@ -19,3 +19,45 @@ body {
 img {
   background-color: #d8d8d8;
 }
+
+.hero {
+  display: grid;
+  position: relative;
+
+  @media (width >= 1000px) {
+    min-height: 100dvh;
+    grid-template-columns: min(50vw, 35rem) 1fr;
+  }
+
+  &:has(.description) .section {
+    display: none;
+
+    & + .footer {
+      display: none;
+    }
+
+    @media (width >= 1000px) {
+      display: block;
+
+      & + .footer {
+        display: block;
+      }
+    }
+  }
+
+  &:not(:has(.description)) .hero-header {
+    display: none;
+
+    & + .hero-main > .section + .footer {
+      margin-top: 8rem;
+    }
+
+    @media (width >= 1000px) {
+      display: block;
+
+      & + .hero-main > .section + .footer {
+        margin-top: 4rem;
+      }
+    }
+  }
+}

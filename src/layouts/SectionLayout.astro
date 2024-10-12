@@ -12,7 +12,7 @@ interface Props {
 const { title, headerPage, color, sectionDescription } = Astro.props;
 ---
 
-<BaseLayout headerPage={headerPage}>
+<BaseLayout headerPage={headerPage} >
   <section class="section" transition:name="description-section">
     {title && <Heading headingName={title} typeHeading="h2" color={color} />}
     {
@@ -22,7 +22,6 @@ const { title, headerPage, color, sectionDescription } = Astro.props;
     }
     <div class="section-content">
       <slot />
-
     </div>
   </section>
 </BaseLayout>

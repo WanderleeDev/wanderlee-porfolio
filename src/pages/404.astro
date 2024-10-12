@@ -1,5 +1,5 @@
 ---
-import BasicLayout from "../layouts/BasicLayout.astro";
+import NotFoundLayout from "../layouts/NotFoundLayout.astro";
 import { getImage } from "astro:assets";
 import notFoundImage from "../assets/images/404.webp";
 
@@ -10,7 +10,7 @@ const optimizedImage404 = await getImage({
 });
 ---
 
-<BasicLayout>
+<NotFoundLayout>
   <section class="notFound">
     <div
       class="notFound-WrapperImg"
@@ -36,7 +36,7 @@ const optimizedImage404 = await getImage({
       Back to Home
     </a>
   </section>
-</BasicLayout>
+</NotFoundLayout>
 
 <style lang="scss">
   .notFound {
