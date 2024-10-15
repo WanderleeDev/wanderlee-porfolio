@@ -1,14 +1,20 @@
 ---
-import { Picture } from "astro:assets";
+import { Picture, getImage } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import myPhoto from "../../assets/images/myPhoto.webp"
+
+const optimizedImage = await getImage({
+  src: myPhoto,
+  format: "webp",
+});
+
 ---
 
 <figure class="card">
   
   <Picture
     class="card-img u-min-shadow"
-    src={myPhoto}
+    src={optimizedImage.src}
     width={200}
     height={200}
     formats={['avif', 'webp', 'png']}
