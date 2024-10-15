@@ -1,17 +1,11 @@
 ---
 import byteCode from "../../assets/images/binaryCode.webp";
-import { getImage } from "astro:assets";
 import Image from "astro/components/Image.astro";
-
-const optimizedByteCode = await getImage({
-  src: byteCode,
-  formart: "avif",
-});
 ---
 
 <Image
   class="banner-byteCode"
-  src={optimizedByteCode.src}
+  src={byteCode.src}
   width={1000}
   height={90}
   alt="mi foto"

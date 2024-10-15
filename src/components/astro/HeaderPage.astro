@@ -1,13 +1,7 @@
 ---
-import { getImage } from "astro:assets";
 import PersonalCard from "./PersonalCard.astro";
 import Technologies from "../react/components/Technologies";
 import backgroundBlur from "../../assets/images/blurBackground.webp";
-
-const optimizedbackgroundBlur = await getImage({
-  src: backgroundBlur,
-  format: "webp",
-});
 ---
 
 <header

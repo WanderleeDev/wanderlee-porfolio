@@ -1,20 +1,15 @@
 ---
 import NotFoundLayout from "../layouts/NotFoundLayout.astro";
-import { getImage } from "astro:assets";
 import notFoundImage from "../assets/images/404.webp";
 
 const { href } = Astro.url;
-const optimizedImage404 = await getImage({
-  src: notFoundImage,
-  format: "webp",
-});
 ---
 
 <NotFoundLayout>
   <section class="notFound">
     <div
       class="notFound-WrapperImg"
-      style={`background-image: url(${optimizedImage404.src});`}
+      style={`background-image: url(${notFoundImage.src});`}
     >
     </div>
     <h1 class="notFound-title">NOT FOUND</h1>

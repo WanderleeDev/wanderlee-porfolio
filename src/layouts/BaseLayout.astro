@@ -10,18 +10,12 @@ import "@fontsource/source-sans-pro";
 import "@fontsource/tourney/100.css";
 //  Astro utilities
 import ViewTransitions from "astro/components/ViewTransitions.astro";
-import { getImage } from "astro:assets";
 import backgroundMain from "../assets/images/pattern.webp";
 import Metadata from "../components/astro/Metadata.astro";
 
 interface Props {
   headerPage: string;
 }
-
-const optimizedBackgroundMain = await getImage({
-  src: backgroundMain,
-  format: "webp",
-});
 
 const { headerPage } = Astro.props;
 ---
