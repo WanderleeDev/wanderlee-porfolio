@@ -111,7 +111,7 @@
 <script>
   import { validateMessage } from "../../pages/api/email/message.schema";
 
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("astro:page-load", () => {
     const form = document.querySelector(".form-content");
     const formBtn = form?.querySelector(".form-button");
 
@@ -127,9 +127,9 @@
 
       formBtn.disabled = true;
       formBtn.textContent = "Enviando...";
-
+      
       try {
-        const data = validateMessage(
+        const parseData = validateMessage(
           Object.fromEntries(new FormData(e.target as HTMLFormElement))
         );
 
@@ -138,15 +138,15 @@
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(parseData),
         });
       } catch (error) {
         if (error instanceof Error) return console.log(error.message);
 
         console.log(`Something went wrong: ${error}`);
       } finally {
-        formBtn!.disabled = false;
-        formBtn!.textContent = "Enviar mensaje";
+        formBtn.disabled = false;
+        formBtn.textContent = "Enviar mensaje";
         form.reset();
       }
     };

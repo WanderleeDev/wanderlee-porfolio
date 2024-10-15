@@ -29,7 +29,7 @@ export const technologies: ITechnology[] = [
   { svg: html.src, color: "#E44D26", name: "html" },
   { svg: css.src, color: "#264DE4", name: "css" },
   { svg: javaScript.src, color: "#F0DB4F", name: "javaScript" },
-  { svg: angular.src, color: "#DD0031", name: "angular" },
+  { svg: angular.src, color: "#F837C9", name: "angular" },
   { svg: typeScript.src, color: "#007ACC", name: "typeScript" },
   { svg: sass.src, color: "#CC6699", name: "sass" },
   { svg: tailwindCss.src, color: "#06B6D4", name: "tailwindCss" },

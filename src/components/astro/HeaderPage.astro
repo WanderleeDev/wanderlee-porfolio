@@ -29,8 +29,9 @@ const optimizedbackgroundBlur = await getImage({
     color: #fff;
     background-repeat: no-repeat;
     background-size: cover, 150%;
-    height: 100dvh;
+    min-height: 100dvh;
     z-index: 1;
+
     @media (width >= 1000px) {
       height: initial;
     }
