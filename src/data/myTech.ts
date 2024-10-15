@@ -12,7 +12,6 @@ import react from "../icons/learning/react.svg";
 import astro from "../icons/learning/astro.svg";
 import node from "../icons/learning/node.svg";
 import express from "../icons/learning/express.svg";
-import cSharp from "../icons/learning/cSharp.svg";
 import mySql from "../icons/learning/mySql.svg";
 
 import postgreSQL from "../icons/technologies/postgreSQL.svg";

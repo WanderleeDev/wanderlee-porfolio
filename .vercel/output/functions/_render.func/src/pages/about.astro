@@ -1,0 +1,32 @@
+---
+import SectionLayout from "../layouts/SectionLayout.astro";
+import Accordion from "../components/astro/Accordion.astro";
+import VideoPlayer from "../components/react/components/VideoPlayer";
+import ExtraContent from "../components/astro/ExtraContent.astro";
+import { studies } from "../data/studies";
+
+const aboutDescription =
+  "Soy un desarrollador frontend orientado en la creación de páginas web responsive. Mi objetivo es crear interfaces intuitivas y funcionales para mejorar la experiencia del usuario en cualquier dispositivo";
+---
+
+<SectionLayout
+  title="Sobre mi 👨‍💻"
+  headerPage="Sobre mi"
+  color="#ee6307"
+  sectionDescription={aboutDescription}
+>
+  <div>
+    {
+      studies.map((study) => (
+        <Accordion dataAccordion={study} name="data">
+          {study.typeContent === "extra" && (
+            <VideoPlayer client:visible slot="content-extra" />
+          )}
+          {study.typeContent === "expectations" && (
+            <ExtraContent slot="content-extra" />
+          )}
+        </Accordion>
+      ))
+    }
+  </div>
+</SectionLayout>

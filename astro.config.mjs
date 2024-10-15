@@ -14,6 +14,6 @@ export default defineConfig({
     remotePatterns: [{ protocol: 'https' }]
   },
 
-  output: 'server',
-  adapter: vercel()
+  // output: 'server',
+  // adapter: vercel()
 });
