@@ -7,54 +7,51 @@ interface Props {
 }
 
 const { routes, title } = Astro.props;
-console.log(routes);
 ---
-
-<div class="gruopLink">
-  {
-    Object.entries(routes).map((route) => (
-      <a
-        class="gruopLink-link"
-        href={route[1]}
-        target="_blank"
-        rel="noopener noreferrer"
-        title={`ver ${route[0]} ${title}`}
-        aria-label={`ver ${route[0]} ${title}`}
-      >
-        <Icon
-          class="card-icon"
-          name={`extras/${route[0]}`}
-          width={25}
-          height={25}
-          aria-hidden="true"
-        />
-      </a>
-    ))
-  }
-  <a
-    class="gruopLink-link"
-    href={`/projects/${title}`}
-    target="_blank"
-    rel="noopener noreferrer"
-    title={`ver mas detalles de ${title}`}
-    aria-label={`ver mas detalles de ${title}`}
-  >
-    <Icon
-      class="card-icon"
-      name="extras/more"
-      width={25}
-      height={25}
-      aria-hidden="true"
-    />
-  </a>
-</div>
+  <div class="gruopLink">
+    {
+      Object.entries(routes).map((route) => (
+        <a
+          class="gruopLink-link"
+          href={route[1]}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={`ver ${route[0]} ${title}`}
+          aria-label={`ver ${route[0]} ${title}`}
+        >
+          <Icon
+            class="card-icon"
+            name={`extras/${route[0]}`}
+            width={30}
+            height={30}
+            aria-hidden="true"
+          />
+        </a>
+      ))
+    }
+    <a
+      class="gruopLink-link"
+      href={`/projects/${title.replaceAll(" ", "-").toLocaleLowerCase()}`}
+      rel="noopener noreferrer"
+      title={`ver mas detalles de ${title}`}
+      aria-label={`ver mas detalles de ${title}`}
+    >
+      <Icon
+        class="card-icon"
+        name="extras/github"
+        width={30}
+        height={30}
+        aria-hidden="true"
+      />
+    </a>
+  </div>
 
 <style lang="scss">
   .gruopLink {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
     position: absolute;
     inset: 0;
     padding: 1rem;

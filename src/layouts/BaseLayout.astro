@@ -12,6 +12,7 @@ import "@fontsource/tourney/100.css";
 import ViewTransitions from "astro/components/ViewTransitions.astro";
 import { getImage } from "astro:assets";
 import backgroundMain from "../assets/images/pattern.webp";
+import Metadata from "../components/astro/Metadata.astro";
 
 interface Props {
   headerPage: string;
@@ -30,11 +31,6 @@ const { headerPage } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="robots" content="index, follow" />
-    <meta
-      name="description"
-      content="¡Bienvenido a mi portafolio! Soy un programador front-end especializado en Angular, TypeScript, SCSS y Tailwind CSS. Además, estoy explorando React con Astro Framework. Descubre mis proyectos y experiencias, y contáctame para colaboraciones o para saber más sobre mis servicios."
-    />
     <title>{`Porfolio | ${headerPage ?? ""}`}</title>
     <link
       transition:persist
@@ -43,6 +39,7 @@ const { headerPage } = Astro.props;
       href="/favicon.svg"
     />
     <ViewTransitions />
+    <Metadata />
   </head>
   <body class="hero">
     <HeaderPage />
@@ -50,6 +47,7 @@ const { headerPage } = Astro.props;
       class="hero-main"
       style={`background-image: url(${optimizedBackgroundMain.src});`}
     >
+
       <Navbar />
       <slot />
       <Footer />

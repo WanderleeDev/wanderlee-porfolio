@@ -13,16 +13,16 @@ const {
 ---
 
 <article class="card">
-  <div class="card-link">
-    <Image
-      class="card-img"
-      src={image}
-      width={396}
-      height={252}
-      alt={title}
-    />
-    <GroupLinks routes={links} title={title} />
-  </div>
+    <div class="card-link" >
+        <Image
+          class="card-img"
+          src={image}
+          width={396}
+          height={252}
+          alt={title}
+        />
+          <GroupLinks routes={links} title={title} />
+    </div>
   <div class="card-content">
     <h3 class="card-title">{title}</h3>
     {
@@ -56,6 +56,7 @@ const {
 
     &-link {
       position: relative;
+      display: block;
 
       &::after {
         content: "";
@@ -67,6 +68,7 @@ const {
         transform: scale(0);
         transform-origin: bottom;
         transition: transform linear 0.2s;
+        z-index: 0;
       }
     }
 
@@ -74,7 +76,6 @@ const {
       width: 100%;
       height: 14rem;
       aspect-ratio: 16/9;
-      // object-fit: cover;
       border-radius: 0.4rem;
       background-color: rgb(216, 216, 216);
     }
@@ -103,5 +104,11 @@ const {
     &-description {
       text-wrap: pretty;
     }
+  }
+
+  .li {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
   }
 </style>
