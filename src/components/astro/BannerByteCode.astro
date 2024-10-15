@@ -5,7 +5,7 @@ import Image from "astro/components/Image.astro";
 
 <Image
   class="banner-byteCode"
-  src={byteCode.src}
+  src={byteCode}
   width={1000}
   height={90}
   alt="mi foto"
@@ -13,6 +13,7 @@ import Image from "astro/components/Image.astro";
 
 <style lang="scss">
   .banner-byteCode {
+    object-fit: fill;
     width: 100%;
     opacity: 0.4;
     margin: 1rem 0;
