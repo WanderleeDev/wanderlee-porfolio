@@ -1,26 +1,22 @@
 ---
-import SectionLayout from '../layouts/SectionLayout.astro'
-import DynamicPresentation from '../components/astro/DynamicPresentation.astro'
----
-<SectionLayout headerPage="Home" color="#33a524">
-  <div class="description">
-    <DynamicPresentation/>
-  </div>
-</SectionLayout>
+import SectionLayout from "../layouts/SectionLayout.astro";
+import CardProject from "../components/astro/CardProject.astro";
+import { myProjects } from "../data/myProjects";
+import GalleryProjects from "../components/astro/GalleryProjects.astro";
+import ExtraProjects from "../components/astro/ExtraProjects.astro";
 
-<style lang="scss">
-  .description {
-    width: 100%;
-    position: relative;
-    text-align: center;
-    display: grid;
-    align-self: center;
-    place-items: center;
-    font-family: 'Source Sans Pro', system-ui, sans-serif;
-    font-size: var(--font-xl);
-    font-weight: 900;
-    line-height: 1.4;
-    min-height: calc(100dvh - 5rem);
-    animation:  toUp 0.5s ease-in-out;
-  }
-</style>
+const proyectDescription =
+  'Mi selección personal de proyectos frontend, donde destaco ejemplos que representan mi enfoque en el desarrollo web orientado al usuario y a la calidad.';
+---
+
+<SectionLayout
+  headerPage="Projectos 🚀"
+  title="Projects 🚀"
+  sectionDescription={proyectDescription}
+  color="#f94848"
+>
+  <GalleryProjects>|
+    {myProjects.map((project) => <CardProject project={project} />)}
+  </GalleryProjects>
+  <ExtraProjects />
+</SectionLayout>

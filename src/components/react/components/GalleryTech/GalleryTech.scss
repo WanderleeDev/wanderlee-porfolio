@@ -13,7 +13,7 @@
   
   &-img {
     height: 2rem;
-    transition: transform .2s linear;
+    transition: transform .2s linear, filter .3s linear;
     background-color: transparent;
     object-fit: contain;
     aspect-ratio: 1/1;

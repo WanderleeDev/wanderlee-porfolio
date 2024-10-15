@@ -13,7 +13,7 @@ const GalleryTech = (): JSX.Element => {
   }
 
   return (
-    <figure className='gallery'>
+    <figure className='gallery' >
       <div className='scroll top-10'>
         <Marquee isReverseScroll={true} valueMarquee={valueScroll}/>
       </div>

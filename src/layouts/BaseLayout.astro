@@ -11,7 +11,7 @@ import "@fontsource/tourney/100.css";
 //  Astro utilities
 import ViewTransitions from "astro/components/ViewTransitions.astro";
 import { getImage } from "astro:assets";
-import backgroundMain from "../assets/images/pattern.webp";
+import backgroundMain from "./src/assets/images/pattern.webp";
 import Metadata from "../components/astro/Metadata.astro";
 
 interface Props {
@@ -38,7 +38,7 @@ const { headerPage } = Astro.props;
       type="image/svg+xml"
       href="/favicon.svg"
     />
-    <ViewTransitions />
+    <ViewTransitions fallback="swap" />
     <Metadata />
   </head>
   <body class="hero">
@@ -59,6 +59,9 @@ const { headerPage } = Astro.props;
   .hero {
     display: grid;
     position: relative;
+    max-width: 140rem;
+    margin-inline: auto ;
+    background-color: #333;
 
     &-main {
       display: grid;
