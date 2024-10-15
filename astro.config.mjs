@@ -3,7 +3,7 @@ import react from "@astrojs/react";
 
 import icon from "astro-icon";
 
-// import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,6 +14,6 @@ export default defineConfig({
     remotePatterns: [{ protocol: 'https' }]
   },
 
-  // output: 'server',
-  // adapter: vercel()
+  output: 'server',
+  adapter: vercel()
 });
