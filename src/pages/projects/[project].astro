@@ -1,8 +1,13 @@
 ---
 const { project } = Astro.params;
 
+const data = await fetch('http://localhost:4321/api/projects');
+const projects = await data.json();
 ---
 
 <div>
+  -----------------
   <h1>{project}</h1>
+  -----------------
+  <a href="/">Go back</a>
 </div>

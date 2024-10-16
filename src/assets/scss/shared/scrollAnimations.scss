@@ -1,5 +1,5 @@
 .fadeIn-scroll-ani {
-  animation: fadeIn ease-in-out forwards;
+  animation:  fadeIn ease-in-out both;
   animation-timeline: view();
-  animation-range: 0px 150px;
+  animation-range: 10% 25%;
 }
