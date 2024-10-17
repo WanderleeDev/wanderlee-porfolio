@@ -7,7 +7,7 @@ import GroupButtons from "../../components/astro/GroupButtons.astro";
 
 const { project } = Astro.params;
 
-const data = await fetch(`http://localhost:4321/api/projects/${project}`);
+const data = await fetch(`${process.env.API_URL}/api/projects/${project}`);
 const projectData = (await data.json()) as IProject;
 ---
 
