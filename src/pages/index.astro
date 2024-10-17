@@ -1,14 +1,9 @@
 ---
 import SectionLayout from "../layouts/SectionLayout.astro";
-import GalleryProjects from "../components/astro/GalleryProjects.astro";
-import ExtraProjects from "../components/astro/ExtraProjects.astro";
-import type { IProject } from "../interfaces/IProject.interface";
+import SectionProject from "../components/astro/SectionProject.astro";
 
 const proyectDescription =
   "Mi selección personal de proyectos frontend, donde destaco ejemplos que representan mi enfoque en el desarrollo web orientado al usuario y a la calidad.";
-
-const data = await fetch(`${import.meta.env.API_URL}/api/projects`);
-const projects = await data.json() as IProject[];
 ---
 
 <SectionLayout
@@ -17,6 +12,5 @@ const projects = await data.json() as IProject[];
   sectionDescription={proyectDescription}
   color="#f94848"
 >
-  <GalleryProjects projects={projects} />
-  <ExtraProjects />
+  <SectionProject />
 </SectionLayout>
