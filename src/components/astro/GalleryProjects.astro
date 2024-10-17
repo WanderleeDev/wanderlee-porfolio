@@ -1,11 +1,17 @@
 ---
-import { myProjects } from "../../data/myProjects";
+import type { IProject } from "../../interfaces/IProject.interface";
 import CardProject from "./CardProject.astro";
+
+interface Props {
+  projects: IProject[]
+}
+
+const { projects } = Astro.props;
 ---
 
 <div class="gallery">
   <div class="gallery-projects">
-    {myProjects.map((project) => <CardProject project={project} />)}
+    {projects.map((project) => <CardProject project={project} />)}
   </div>
 </div>
 

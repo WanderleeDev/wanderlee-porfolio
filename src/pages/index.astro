@@ -1,6 +1,5 @@
 ---
 import SectionLayout from "../layouts/SectionLayout.astro";
-import CardProject from "../components/astro/CardProject.astro";
 import GalleryProjects from "../components/astro/GalleryProjects.astro";
 import ExtraProjects from "../components/astro/ExtraProjects.astro";
 import type { IProject } from "../interfaces/IProject.interface";
@@ -18,9 +17,6 @@ const projects = await data.json() as IProject[];
   sectionDescription={proyectDescription}
   color="#f94848"
 >
-  <GalleryProjects
-    >|
-    {projects.map((project) => <CardProject project={project} />)}
-  </GalleryProjects>
+  <GalleryProjects projects={projects} />
   <ExtraProjects />
 </SectionLayout>
