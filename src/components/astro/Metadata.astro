@@ -1,34 +1,36 @@
 ---
-import { AstroSeo } from '@astrolib/seo';
+import { AstroSeo } from "@astrolib/seo";
 
-const description = '¡Bienvenido a mi portafolio! Soy un programador front-end, actualmente  aprendiendo React y tecnologias Backend para complementar mis conocimientos.';
-const banner = 'https://www.dropbox.com/scl/fi/y5opsa98mnh55eyn86x7m/banner-porfolio.webp?rlkey=4197gnrqp0pusklyhyrh4fl3h&st=nf3780x3&raw=1';
-const url = 'https://wanderlee-porfolio-virid.vercel.app/';
+const description =
+  "¡Bienvenido a mi portafolio! Soy un programador front-end, actualmente  aprendiendo React y tecnologias Backend para complementar mis conocimientos.";
+const banner =
+  "https://www.dropbox.com/scl/fi/y5opsa98mnh55eyn86x7m/banner-porfolio.webp?rlkey=4197gnrqp0pusklyhyrh4fl3h&st=nf3780x3&raw=1";
+const url = "https://wanderlee-porfolio-virid.vercel.app/";
 ---
 
 <AstroSeo
   description={description}
-  canonical={url},
+  canonical={url}
   noindex={false}
   nofollow={false}
   openGraph={{
     url: url,
-    title: 'Porfolio Wanderlee',
+    title: "Porfolio Wanderlee",
     description: description,
     images: [
       {
         url: banner,
         width: 800,
         height: 400,
-        alt: 'Porfolio pre view',
-        type: 'image/webp',
-      }
+        alt: "Porfolio pre view",
+        type: "image/webp",
+      },
     ],
-    site_name: 'Porfolio Wanderlee',
+    site_name: "Porfolio Wanderlee",
   }}
   twitter={{
-    handle: '@handle',
-    site: '@site',
-    cardType: 'summary_large_image',
+    handle: "@handle",
+    site: "@site",
+    cardType: "summary_large_image",
   }}
 />

@@ -8,12 +8,13 @@ import vercel from '@astrojs/vercel/serverless';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), icon()],
-
   image: {
     domains: ['dropbox.com'],
     remotePatterns: [{ protocol: 'https' }]
   },
 
   output: 'server',
-  adapter: vercel()
+  adapter: vercel({
+    webAnalytics: { enabled: true }
+  })
 });

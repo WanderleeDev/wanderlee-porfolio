@@ -13,7 +13,7 @@ const { title, headerPage, color, sectionDescription } = Astro.props;
 ---
 
 <PageLayout headerPage={headerPage} >
-  <section class="section" transition:name="description-section">
+  <section class="section" >
     {title && <Heading headingName={title} typeHeading="h2" color={color} />}
     {
       sectionDescription && (

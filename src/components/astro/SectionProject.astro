@@ -6,6 +6,7 @@ import type { IProject } from "../../interfaces/IProject.interface";
 const data = await fetch(`${import.meta.env.API_URL}/api/projects`);
 const projects = await data.json() as IProject[];
 ---
-
-<GalleryProjects projects={projects} />
-<ExtraProjects />
+<div>
+  <GalleryProjects projects={projects} />
+  <ExtraProjects />
+</div>
