@@ -6,16 +6,6 @@ const navItems = ["projects", "about", "contact"];
 
 <nav class="nav u-shadow-2" transition:name="navbar">
   <ul class="nav-list" data-link="home">
-    <li class="nav-listItem" data-link="home">
-      <a
-        class="nav-listLink"
-        href="/"
-        rel="ir a la página principal"
-        title="ir a la página principal"
-      >
-        <Icon aria-hidden="true" name={`extras/home`} width={25} height={25} />
-      </a>
-    </li>
     {
       navItems.map((item) => (
         <li class="nav-listItem" data-link={item}>

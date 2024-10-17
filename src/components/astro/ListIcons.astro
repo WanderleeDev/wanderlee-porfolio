@@ -1,15 +1,16 @@
 ---
 import { Icon } from "astro-icon/components";
 interface Props {
-  technologies: string[]
+  technologies: string[];
+  gap?: number;
 }
 
-const { technologies } = Astro.props
+const { technologies, gap } = Astro.props;
 ---
 
 {
   technologies.length > 0 && (
-    <figure class="listIcons">
+    <figure class="listIcons" style={`gap: ${gap ?? "0.5"}rem;`}>
       {technologies.map((tech) => (
         <Icon
           class="listIcons-icon"
@@ -24,14 +25,13 @@ const { technologies } = Astro.props
 }
 
 <style lang="scss">
-    .listIcons {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 0.5rem;
+  .listIcons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
-      &-icon {
-        width: fit-content;
-      }
+    &-icon {
+      width: fit-content;
     }
+  }
 </style>

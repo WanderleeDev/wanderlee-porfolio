@@ -1,8 +1,9 @@
 ---
-import { Icon } from "astro-icon/components";
 import GroupLinks from "./GroupLinks.astro";
+import ListIcons from "./ListIcons.astro";
 import type { IProject } from "../../interfaces/IProject.interface";
 import { Image } from "astro:assets";
+
 interface Props {
   project: IProject;
 }
@@ -13,33 +14,20 @@ const {
 ---
 
 <article class="card">
-    <div class="card-link" >
-        <Image
-          class="card-img"
-          src={image}
-          width={396}
-          height={252}
-          alt={title}
-        />
-          <GroupLinks routes={links} title={title} />
-    </div>
+  <div class="card-link">
+    <Image
+      transition:name={title}
+      class="card-img"
+      src={image}
+      width={396}
+      height={252}
+      alt={title}
+    />
+    <GroupLinks routes={links} title={title} />
+  </div>
   <div class="card-content">
     <h3 class="card-title">{title}</h3>
-    {
-      technologies.length > 0 && (
-        <figure class="card-icons">
-          {technologies.map((tech) => (
-            <Icon
-              class="card-icon"
-              name={`myTech/${tech}`}
-              width={25}
-              height={25}
-              title={tech}
-            />
-          ))}
-        </figure>
-      )
-    }
+    <ListIcons technologies={technologies} />
     <p class="card-description">{description}</p>
   </div>
 </article>
@@ -49,7 +37,7 @@ const {
     width: min(100%, 25rem);
     display: grid;
     gap: 1rem;
-    animation:  fadeIn ease-in-out both;
+    animation: fadeIn ease-in-out both;
     animation-timeline: view();
     animation-range: 10% 30%;
     transform-origin: top;
@@ -88,17 +76,6 @@ const {
     &-title {
       font-size: var(--font-md);
       color: var(---clr-letter-secondary);
-    }
-
-    &-icons {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    &-icon {
-      width: fit-content;
     }
 
     &-description {

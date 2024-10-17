@@ -1,0 +1,67 @@
+---
+import type { IProject } from "../../interfaces/IProject.interface";
+import ListIcons from "./ListIcons.astro";
+
+type Props = Pick<IProject, "concepts" | "technologies">;
+
+const { concepts, technologies } = Astro.props;
+---
+
+<article class="info">
+  <div>
+    <h2 class="info-title">Conceptos aprendidos</h2>
+    <ul class="info-list">
+      {concepts.map((concept) => <li class="info-listItem">{concept}</li>)}
+    </ul>
+  </div>
+  <div>
+    <h2 class="info-title">Tecnologías utilizadas</h2>
+    <ListIcons technologies={technologies} gap={1} />
+  </div>
+</article>
+
+<style lang="scss">
+  .info {
+    display: grid;
+    gap: 3rem;
+
+    @media (width >= 800px) {
+      gap: var(--spacing);
+      grid-area: 1 / 1 / 2 / 2;
+    }
+
+    &-title {
+      padding-bottom: 1rem;
+      font-size: 1.1rem;
+      font-family: "Sixtyfour Variable", monospace;
+      line-height: 1.5;
+      text-wrap: pretty;
+    }
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    &-listItem {
+      position: relative;
+      list-style: square inside;
+      font-family: ui-monospace, monospace;
+      font-size: 1rem;
+
+      &::marker {
+        color: transparent;
+      }
+
+      &::before {
+        content: "$";
+        position: absolute;
+        color: var(--accent-color);
+        font-weight: 600;
+        font-size: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+</style>

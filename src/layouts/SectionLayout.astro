@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
+import PageLayout from "./PageLayout.astro";
 import Heading from "../components/astro/Heading.astro";
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 const { title, headerPage, color, sectionDescription } = Astro.props;
 ---
 
-<BaseLayout headerPage={headerPage} >
+<PageLayout headerPage={headerPage} >
   <section class="section" transition:name="description-section">
     {title && <Heading headingName={title} typeHeading="h2" color={color} />}
     {
@@ -24,7 +24,7 @@ const { title, headerPage, color, sectionDescription } = Astro.props;
       <slot />
     </div>
   </section>
-</BaseLayout>
+</PageLayout>
 
 <style lang="scss">
   .section {
