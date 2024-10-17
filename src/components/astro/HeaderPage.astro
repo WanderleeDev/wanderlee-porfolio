@@ -7,6 +7,7 @@ import backgroundBlur from "../../assets/images/blurBackground.webp";
 <header
   class="hero-header"
   style={`background-image: url(${backgroundBlur.src});`}
+  transition:persist
 >
   <div class="bg-grid">
     <PersonalCard />
@@ -28,7 +29,7 @@ import backgroundBlur from "../../assets/images/blurBackground.webp";
       height: initial;
     }
   }
-
+  
   .bg-grid {
     width: 100%;
     height: 100%;
