@@ -15,7 +15,7 @@ const aboutDescription =
   color="#ee6307"
   sectionDescription={aboutDescription}
 >
-  <div class="cotainer">
+  <div>
     {
       studies.map((study) => (
         <Accordion dataAccordion={study} name="data">
@@ -30,10 +30,3 @@ const aboutDescription =
     }
   </div>
 </SectionLayout>
-
-
-<style>
-  .container {
-    content-visibility: auto;
-  }
-</style>
