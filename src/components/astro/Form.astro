@@ -8,7 +8,7 @@
       <label class="form-label" for="author">Tu nombre (opcional)</label>
       <input class="form-input" type="text" id="author" name="author" />
       <label class="form-label mark" for="message">Mensaje y contacto</label>
-      <textarea name="message" id="message" class="form-input"></textarea>
+      <textarea minlength="3"  required name="message" id="message" class="form-input"></textarea>
       <button class="form-button" type="submit">Enviar mensaje</button>
     </fieldset>
   </form>
@@ -139,9 +139,12 @@
           },
           body: JSON.stringify(parseData),
         });
+
+        alert("Mensaje enviado con éxito");
       } catch (error) {
         if (error instanceof Error) return console.log(error.message);
-
+        
+        alert("Algo salió mal, intente de nuevo");
         console.log(`Something went wrong: ${error}`);
       } finally {
         formBtn.disabled = false;
