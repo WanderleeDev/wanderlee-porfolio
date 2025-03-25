@@ -28,4 +28,16 @@
   --font-tourney: "Tourney", system-ui;
 
   --breakpoint-xs: 25rem;
+
+  --animate-marquee: marquee 1s ease-in-out infinite;
+  --animate-marquee-reverse: marquee 1s ease-in-out infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% - 1rem));
+    }
+  }
 }

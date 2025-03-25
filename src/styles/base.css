@@ -59,17 +59,17 @@ img {
     grid-template-columns: min(50vw, 35rem) 1fr;
   }
 
-  &:has(.grid-side-b) .section {
+  &:has(.grid-side-b) section {
     display: none;
 
-    & + .footer {
+    & + footer {
       display: none;
     }
 
     @media (width >= 1000px) {
       display: block;
 
-      & + .footer {
+      & + footer {
         display: block;
       }
     }
