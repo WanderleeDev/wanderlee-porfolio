@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "./light.theme.css" layer(theme);
+@import "./theme.css" layer(theme);
 @import "./base.css" layer(base);
 @import "./keyframes.css" layer(utilities);
 @import "./utils.css" layer(utilities);

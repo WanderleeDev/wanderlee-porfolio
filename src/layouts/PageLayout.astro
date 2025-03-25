@@ -7,7 +7,7 @@ import GallerySkeleton from "../modules/technologies/components/GallerySkeleton.
 import GalleryTech from "../modules/technologies/components/GalleryTech";
 import backgroundBlur from "../assets/images/blurBackground.webp";
 import { Navbar } from "../shared/components/Navbar";
-import ThemeBtn from "../shared/components/ThemeBtn.astro";
+import { fade, slide } from "astro:transitions";
 
 const { headerPage } = Astro.props;
 
@@ -34,6 +34,7 @@ const { headerPage } = Astro.props;
 
       <main
         class="hero-main bg-[url(../assets/images/pattern.webp)] dark:bg-[url(../assets/images/pattern-dark.webp)] dark:text-gray-200 transition-all duration-300"
+        transition:animate={fade({ duration: 300 })}
       >
         <Navbar client:only />
 

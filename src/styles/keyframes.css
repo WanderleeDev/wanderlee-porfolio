@@ -1,64 +1,9 @@
-@keyframes simpleFade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 100;
-  }
-}
-
-@keyframes fadeDescription {
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-    user-select: auto;
-    translate: 0 0;
-    pointer-events: all;
-  }
-}
-
-@keyframes toUp {
-  0% {
-    translate: 0 1rem;
-    opacity: 0;
-  }
-  100% {
-    translate: 0 0rem;
-    opacity: 1;
-  }
-}
-
 @keyframes marquee {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(calc(-100% - 1rem));
-  }
-}
-
-@keyframes slide-bottom {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(3rem);
-    opacity: 0;
-  }
-}
-
-@keyframes blink {
-  to {
-    background: transparent;
-  }
-}
-
-@keyframes scaleAndHidden {
-  to {
-    transform: scale(0);
-    opacity: 0;
-    display: none;
   }
 }
 
