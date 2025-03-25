@@ -1,0 +1,107 @@
+---
+import { Icon } from "astro-icon/components";
+---
+<div class="angularLogo">
+  <div class="angularLogo-ring angularLogo-outset">
+  </div>
+  <div class="angularLogo-ring angularLogo-inset">
+  </div>
+  
+  <Icon
+    class="angularLogo-icon"
+    aria-hidden="true"
+    name={"myTech/angular"}
+    width={120}
+    height={120}
+  />
+</div>
+
+<style scoped>
+.angularLogo {
+  width: 10rem;
+  height: 10rem;
+  display:grid;
+  place-content: center;
+  place-items: center;
+  position: relative;
+  margin: auto;
+
+  & .angularLogo-ring {
+    --color-ring1: #fff;
+    --color-ring2: #000;
+    --time-animation: 10s;
+    --size-ring1: 20rem;
+    --size-ring2: calc(var(--size-ring1) + 20rem);
+    --size-ball: calc(var(--size-ring1) / 20);
+    --rotate-ring1: 0deg;
+    --rotate-ring2: calc(var(--rotate-ring1) + 90deg);
+    --color-ball1: linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99);
+    --color-ball2: linear-gradient(to right, #1e9600, #fff200, #ff0000);
+    --color-ball3: linear-gradient(to right, #a8c0ff, #3f2b96);
+    --color-ball4: linear-gradient(to right, #03001e, #7303c0, #ec38bc, #fdeff9);
+
+    grid-area: 1/1/1/1;
+    position: relative;
+    border-radius: 50%;
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: '';
+      width: var(--size-ball);
+      height: var(--size-ball);
+      border-radius: 50%;
+      border: solid var(--color-ring1) .1rem;
+    }
+
+    &::after {
+      top: 0;
+      left: 50%;
+      translate: 0 -.5rem;
+    }
+
+    &::before {
+      bottom: 0;
+      left: 50%;
+      translate: 0 .5rem;
+    }
+  }
+
+  & .angularLogo-inset {
+    border: solid .1rem var(--color-ring1);
+    height: var(--size-ring2);
+    width: var(--size-ring2);
+    rotate: var(--size-ring1);
+    animation: rotate var(--time-animation) linear infinite;
+
+    &::before {
+      background: var(--color-ball1);
+    }
+
+    &::after {
+      background: var(--color-ball2);
+    }
+  }
+
+  & .angularLogo-outset {
+    border: dotted .1rem var(--color-ring1);
+    height: var(--size-ring1);
+    width: var(--size-ring1);
+    rotate: var(--rotate-ring2);
+    animation: rotate var(--time-animation) linear reverse infinite;
+
+    &::before {
+      background: var(--color-ball3);
+    }
+
+    &::after {
+      background: var(--color-ball4);
+    }
+  }
+
+  & .angularLogo-icon {
+    grid-area: 1/1/1/1;
+    width: fit-content;
+  }
+}
+</style>

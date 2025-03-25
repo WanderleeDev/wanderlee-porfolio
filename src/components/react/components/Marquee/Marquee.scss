@@ -3,10 +3,10 @@
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   overflow: hidden;
-  font-size: var(--font-lg);
+  // font-size: var(--font-lg);
   user-select: none;
-  font-family: 'Tourney', system-ui;
-  
+  font-family: "Tourney", system-ui;
+
   &-content {
     display: flex;
     gap: calc(10vw + 4rem);
@@ -16,9 +16,9 @@
     justify-content: space-around;
     color: inherit;
   }
-  
+
   &-content-item {
-    padding-block: .5rem;
+    padding-block: 0.5rem;
     font-family: inherit;
     color: inherit;
     width: max-content;

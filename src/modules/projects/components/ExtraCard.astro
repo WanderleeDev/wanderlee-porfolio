@@ -1,0 +1,44 @@
+---
+interface Props {
+  background: string;
+  title: string;
+  url: string;
+}
+
+const { background, title, url } = Astro.props;
+---
+
+<a
+  class="fadeInView relative min-h-60 grid place-items-center grid-cols-[1fr_auto] gap-8 p-8 rounded-lg overflow-hidden text-white"
+  style={{ background: background }}
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`view projects extra of ${title}`}
+  title={`go to projects ${title} extra`}
+>
+  <div class="grid h-full max-w-96 justify-self-start relative z-10">
+    <h3 class="flex items-center gap-2 w-max text-clamp-md">
+      <span class="font-semibold text-orange-600">&lt;</span>
+      Projects {title}
+      <span class="font-semibold text-orange-600">&gt;</span>
+    </h3>
+    <p>Some of my projects carried out with {title}.</p>
+  </div>
+  <div class="icon">
+    <slot />
+  </div>
+</a>
+
+<style scoped>
+  .icon {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.4;
+
+    @media (width >= 500px) {
+      position: static;
+      opacity: 1;
+    }
+  }
+</style>

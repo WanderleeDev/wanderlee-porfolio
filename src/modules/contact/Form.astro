@@ -1,0 +1,49 @@
+---
+import { isInputError } from 'astro:actions';
+import { actions } from 'astro:actions';
+import ErrorMessage from './ErrorMessage.astro';
+import SuccessfulMessage from './SuccessfulMessage.astro';
+const result = Astro.getActionResult(actions.sendMessage)
+const inputErrors = isInputError(result?.error) ? result.error.fields: null
+---
+{ result?.data?.success && (<SuccessfulMessage />) }
+
+<div id="form" class="max-w-[50rem] mx-auto bg-pink-100 rounded-lg shadow-md flex flex-col justify-between p-3 dark:bg-red-950 dark:text-white">
+  <form class="text-red-900 dark:text-gray-300" autocomplete="off" method="post" action={actions.sendMessage}>
+    <fieldset class="border-[.1rem] border-dotted border-brown p-5 flex flex-col gap-4">
+      <legend class="px-2 italic font-bold">Para WanderleeDev:</legend>
+
+      <div class="relative">
+        <label class="block text-base relative" for="from">
+          From (opcional)
+        </label>
+        <input 
+          class="w-full p-2 mb-2 mt-1 border rounded bg-white dark:bg-black/20 dark:text-white outline-none focus:ring-2 focus:ring-brown" type="text" 
+          id="from" 
+          name="from" 
+          aria-describedby={
+            inputErrors?.from ? "from-error" : undefined
+          } 
+        />
+
+        {inputErrors?.from && <ErrorMessage message={inputErrors.from[0]} id="from-error" />}
+      </div>
+
+      <div class="relative">
+        <label class="block text-base relative" for="message">Message <span class="absolute text-red-500 dark:text-white">*</span></label>
+        <textarea 
+          required 
+          name="message" 
+          id="message" 
+          class="w-full p-2 mb-2 mt-1 border rounded bg-white dark:bg-black/20 dark:text-white min-h-[7rem] resize-none outline-none focus:ring-2 focus:ring-brown" 
+          aria-describedby={
+            inputErrors?.message ? "message-error" : undefined
+          }></textarea>
+
+        {inputErrors?.message && <ErrorMessage message={inputErrors.message[0]} id="message-error" />}
+      </div>
+
+      <button class="cursor-pointer w-full rounded bg-red-900 text-white font-bold py-2 hover:bg-red-600 transition-all disabled:cursor-not-allowed disabled:opacity-50 dark:bg-red-800 dark:text-white" type="submit">Enviar mensaje</button>
+    </fieldset>
+  </form>
+</div>

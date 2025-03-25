@@ -1,0 +1,26 @@
+---
+import { Icon } from "@iconify/react/dist/iconify.js";
+
+---
+
+<button class="cursor-pointer bg-amber-400 size-6 rounded-sm p-1 block" id="theme-btn" type="button">
+  <Icon icon="devicon:sun" width={30} height={30} />
+  <span >Toggle theme</span>
+</button>
+
+<script is:inline>
+  const themeBtn = document.querySelector("#theme-btn");
+
+  themeBtn?.addEventListener("click", () => {
+    const currentTheme = localStorage.getItem("theme") || "light";
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+    console.log(`current theme: ${currentTheme}`);
+    document.documentElement.classList.remove(currentTheme);
+
+    document.documentElement.classList.add(newTheme);
+
+    localStorage.setItem("theme", newTheme);
+
+    console.log(`new theme: ${newTheme}`);
+  });
+</script>

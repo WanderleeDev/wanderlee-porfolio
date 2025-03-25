@@ -1,0 +1,20 @@
+<script is:inline>
+const localTheme = localStorage.getItem("theme");
+
+function initializeTheme() {
+  if (["dark", "light"].includes(localTheme)) {
+    document.documentElement.classList.add(localTheme);
+    return;
+  }
+  
+  const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  
+  localStorage.setItem("theme", prefersDarkMode);
+  
+  document.documentElement.classList.add(prefersDarkMode);
+}
+
+initializeTheme();
+
+document.addEventListener('astro:page-load', initializeTheme);
+</script>

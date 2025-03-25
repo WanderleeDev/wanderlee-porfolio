@@ -1,0 +1,31 @@
+@theme {
+  --text-clamp-xs: clamp(0.3rem, 0.1vw + 0.3rem, 0.4rem);
+  --text-clamp-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+  --text-clamp-base: clamp(1rem, 0.34vw + 0.91rem, 1.25rem);
+  --text-clamp-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --text-clamp-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --text-clamp-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+  --text-clamp-2xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --text-clamp-3xl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+  --text-clamp-5xl: clamp(3.05rem, 3.54vw + 4.17rem, 7rem);
+  --text-clamp-9xl: clamp(1.5rem, -7.875rem + 30vw, 9rem);
+
+  --color-high-light: #ffd900;
+  --color-high-green: #2ace1a;
+  --color-selection: #ffa60066;
+  --color-letter-primary: #000;
+  --color-letter-secondary: #4f4f4f;
+  --color-background: #fffff7;
+  --color-gradient1: #42d392;
+  --color-gradient2: #647eff;
+  --color-gradient: linear-gradient(
+    135deg,
+    var(--color-gradient1),
+    var(--color-gradient2)
+  );
+
+  --font-sixtyfour: "Sixtyfour Variable", monospace;
+  --font-tourney: "Tourney", system-ui;
+
+  --breakpoint-xs: 25rem;
+}

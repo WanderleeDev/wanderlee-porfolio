@@ -1,0 +1,20 @@
+---
+import { Icon } from "astro-icon/components";
+import { ResumeSkills } from "./ResumeSkills";
+---
+
+  <button class="relative  animate-bounce cursor-pointer text-high-light hover:ring-4 ring-high-light/30 focus:outline-offset-[6px] rounded-full focus:ring-4 transition-shadow" type="button" id="resume-profile" 
+  title="view resume profile" popovertarget="popover-resume-profile">
+    <Icon name="resumeFile" />
+    <span class="sr-only">
+      view resume profile
+    </span>
+  </button>
+
+
+  <div class="popover backdrop:bg-black/10 m-auto content-center backdrop:backdrop-blur-md backdrop:starting:opacity-0 backdrop:transition-opacity h-11/12 rounded-md" id="popover-resume-profile" popover>
+    <ResumeSkills client:visible>
+      <p slot="fallback">loading...</p>
+    </ResumeSkills>
+  </div>
+</div>

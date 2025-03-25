@@ -1,0 +1,9 @@
+---
+interface Props {
+  message: string;
+  id: string;
+}
+const { message, id } = Astro.props;
+---
+
+<p class="text-sm text-white bg-red-500 px-2 rounded-3xl absolute -bottom-4 dark:bg-red-800" id={id}>{message}</p>

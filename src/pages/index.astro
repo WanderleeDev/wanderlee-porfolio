@@ -1,18 +1,32 @@
 ---
-import SectionLayout from "../layouts/SectionLayout.astro";
-import SectionProject from "../components/astro/SectionProject.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import CardProject from "../modules/projects/components/CardProject.astro";
+import ExtraProjects from "../modules/projects/components/ExtraProjects.astro";
+import Heading from "../modules/projects/components/Heading.astro";
+import type { Project } from "../modules/projects/interfaces/Project.interface";
 
-const proyectDescription =
-  "Mi selección personal de proyectos frontend, donde destaco ejemplos que representan mi enfoque en el desarrollo web orientado al usuario y a la calidad.";
+const data = await fetch(`${import.meta.env.API_URL}/api/projects`);
+const projects = await data.json() as Project[];
 ---
 
-<SectionLayout
-  headerPage="Projectos 🚀"
-  title="Projects 🚀"
-  sectionDescription={proyectDescription}
-  color="#f94848"
->
-<div class="grid-side-b">
-  <SectionProject />
-</div>
-</SectionLayout>
+
+<PageLayout headerPage="Projects 🚀" >
+  <section class="pt-20 flex flex-col gap-4" >
+    
+    <Heading headingName="Projects 🚀" typeHeading="h2" color="#f94848" />
+
+    <p>
+      My personal selection of frontend projects, where I highlight examples that represent my approach to user-oriented and quality-oriented web development.
+    </p>
+
+    <div class="my-8 flex flex-col gap-16">
+      <div class="gallery @container">
+        <div class="grid gap-y-12 gap-x-8 @lg:grid-cols-2 place-items-center">
+          {projects.map((project) => <CardProject project={project} />)}
+        </div>
+      </div>
+      <ExtraProjects />
+    </div>
+
+  </section>
+</PageLayout>

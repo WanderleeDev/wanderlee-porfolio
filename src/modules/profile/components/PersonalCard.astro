@@ -1,0 +1,28 @@
+---
+import { Picture } from "astro:assets";
+import { Icon } from "astro-icon/components";
+---
+
+<figure class="grid place-content-center gap-8">
+  <Picture
+    class="mx-auto rounded-full aspect-square object-[50%_15%] object-cover"
+    src={'https://res.cloudinary.com/dy8gpozi6/image/upload/v1729015133/myPhoto_ze3egz.webp'}
+    width={200}
+    height={200}
+    formats={['avif', 'webp', 'png']}
+    loading="eager"
+    alt="mi foto"
+  />
+  <figcaption class="relative text-center">
+    <div class="flex items-center gap-3">
+      <h1 class="text-clamp-lg text-center tracking-widest">Wanderlee Max</h1>
+      <slot />
+    </div>
+    <span class="flex gap-2 items-center justify-center">
+      <Icon class="w-fit" name="peru" width={20} height={20}/>
+      lima - Perú
+    </span>
+  </figcaption>
+</figure>
+
+<!-- font-family: 'Source Sans Pro', system-ui, sans-serif; -->

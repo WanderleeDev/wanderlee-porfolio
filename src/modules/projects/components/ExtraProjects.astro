@@ -1,0 +1,40 @@
+---
+import ExtraCard from "./ExtraCard.astro";
+import Heading from "./Heading.astro";
+import LogoAngularAnimation from "./LogoAngularAnimation.astro";
+import ReactLogoAnimated from "./ReactLogoAnimated.astro";
+import VueLogoAnimated from "./VueLogoAnimated.astro";
+
+const projects = [
+  {
+    title: "Angular",
+    link: "https://entry-page-angular.vercel.app/",
+    backgroundCard: "linear-gradient(to left, #3a6186, #89253e);",
+  },
+  {
+    title: "React",
+    link: "https://react-showcase-three.vercel.app/",
+    backgroundCard: "linear-gradient(to right, #4b79a1, #283e51);",
+  },
+  {
+    title: "Vue",
+    link: "https://vue-showcase-8bg.pages.dev/",
+    backgroundCard: "linear-gradient(to left, #34495E,  #41B883)",
+  }
+];
+---
+
+<article class="">
+  <Heading headingName="Proyectos extra" typeHeading="h2" color="#F94848" />
+  <div class="grid gap-16 md:gap-28 mt-8">
+  {
+    projects.map(({ backgroundCard, link, title }) => (
+      <ExtraCard title={title} background={backgroundCard} url={link}>
+        {title === "Angular" && <LogoAngularAnimation />}
+        {title === "React" && <ReactLogoAnimated />}
+        {title === "Vue" && <VueLogoAnimated />}
+      </ExtraCard>
+    ))
+  }
+  </div>
+</article>

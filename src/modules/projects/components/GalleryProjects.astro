@@ -1,0 +1,34 @@
+---
+import CardProject from "./CardProject.astro";
+import type { Project } from '../interfaces/Project.interface';
+
+interface Props {
+  projects: Project[]
+}
+
+const { projects } = Astro.props;
+---
+
+<div class="gallery">
+  <div class="gallery-projects">
+    {projects.map((project) => <CardProject project={project} />)}
+  </div>
+</div>
+
+<style lang="scss">
+  .gallery {
+    container: gallery / inline-size;
+
+    &-projects {
+      display: grid;
+      gap: 4rem 2rem;
+      justify-items: center;
+    }
+  }
+
+  @container gallery (min-width : 600px) {
+    .gallery-projects {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

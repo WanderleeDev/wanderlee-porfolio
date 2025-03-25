@@ -1,0 +1,9 @@
+@layer utilities {
+  .background-size-min {
+    background-size: 3.5px 3.5px;
+  }
+
+  .background-size-percent {
+    background-size: cover, 150%;
+  }
+}

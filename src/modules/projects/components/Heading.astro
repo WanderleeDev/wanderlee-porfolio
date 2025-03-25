@@ -1,0 +1,40 @@
+---
+import type { HeadingType } from '../../../interfaces/HeadingType';
+
+interface Props {
+  headingName: string;
+  typeHeading: HeadingType;
+  color?: string
+}
+
+const { headingName, typeHeading, color } = Astro.props;
+const baseStyles = 'capitalize text-balance leading-tight'
+---
+
+{
+  typeHeading === "h1" ? (
+    <h1 class={`${baseStyles} text-clamp-2xl`}>
+      <slot /> {headingName}
+    </h1>
+  ) : typeHeading === "h2" ? (
+    <h2 class={`${baseStyles} text-clamp-lg`} style={{color}}>
+      <slot /> {headingName}
+    </h2>
+  ) : typeHeading === "h3" ? (
+    <h3 class={`${baseStyles} text-clamp-md`}>
+      <slot /> {headingName}
+    </h3>
+  ) : typeHeading === "h4" ? (
+    <h4 class={`${baseStyles} text-clamp-lg`}>
+      <slot /> {headingName}
+    </h4>
+  ) : typeHeading === "h5" ? (
+    <h5 class={`${baseStyles} text-clamp-md`}>
+      <slot /> {headingName}
+    </h5>
+  ) : typeHeading === "h6" ? (
+    <h6 class={`${baseStyles} text-clamp-md`}>
+      <slot /> {headingName}
+    </h6>
+  ) : null
+}

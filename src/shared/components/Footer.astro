@@ -1,0 +1,36 @@
+---
+import { Icon } from "astro-icon/components";
+import Image from "astro/components/Image.astro";
+
+const iconsFooter = ["message", "github", "linkedin"];
+---
+
+<footer class="flex flex-col @container" transition:name="footer">
+  <Image
+    class="w-full opacity-40 my-4 min-h-16 object-cover dark:hidden"
+    src={'https://www.dropbox.com/scl/fi/ux0o2ql50vqai3v2jpib2/binaryCode.webp?rlkey=ea9hupzrn25csaa8cng4fwfai&st=wz14eju0&dl=0&raw=1'}
+    width={800}
+    height={90}
+    alt="banner footer"
+  />
+
+  <div class="flex @sm:flex-row flex-col justify-between items-center gap-2 py-8">
+    <p class="text-sm tracking-widest font-medium">Desarrollado por WanderleeDev - 2024</p>
+    <ul class="flex gap-2 items-center">
+      {
+        iconsFooter.map((icon) => (
+          <li class="footer-item">
+            <a href="#" class="footer-link" title={`ir a ${icon}`}>
+              <Icon
+                aria-hidden="true"
+                name={`${icon}`}
+                width={30}
+                height={30}
+              />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</footer>

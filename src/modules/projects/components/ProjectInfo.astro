@@ -1,0 +1,29 @@
+---
+import type { Project } from "../interfaces/Project.interface";
+import ListIcons from "./ListIcons.astro";
+
+type Props = Pick<Project, "concepts" | "technologies">;
+
+const { concepts, technologies } = Astro.props;
+---
+
+<article class="info grid gap-12">
+  <div>
+    <h2 class="pb-4 text-lg leading-[1.5] text-pretty font-sixtyfour">Conceptos aprendidos</h2>
+    <ul class="info-list flex flex-col gap-2"> 
+      {concepts.map((concept) => <li class="text-base font-mono first-letter:text-green-400 first-letter:font-bold">$ {concept}</li>)}
+    </ul>
+  </div>
+  <div class="flex flex-col gap-6">
+    <h2 class="font-sixtyfour">Tecnologías utilizadas</h2>
+    <ListIcons technologies={technologies} gap={1} />
+  </div>
+</article>
+
+<style scoped>
+  .info {
+    @media (width >= 800px) {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+  }
+</style>

@@ -1,0 +1,25 @@
+---
+import { Icon } from "astro-icon/components";
+interface Props {
+  technologies: string[];
+  gap?: number;
+}
+
+const { technologies, gap } = Astro.props;
+---
+
+{
+  technologies.length > 0 && (
+    <figure class="flex justify-start items-center" style={`gap: ${gap ?? "0.5"}rem;`}>
+      {technologies.map((tech) => (
+        <Icon
+          class="w-fit"
+          name={`myTech/${tech}`}
+          width={25}
+          height={25}
+          title={tech}
+        />
+      ))}
+    </figure>
+  )
+}

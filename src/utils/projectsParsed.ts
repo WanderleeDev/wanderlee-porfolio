@@ -1,6 +1,6 @@
 import products from "../../public/projects.json";
-import type { IProject } from "../interfaces/IProject.interface";
+import type { Project } from "../modules/projects/interfaces/Project.interface";
 
-export function getProjectsParsed(): IProject[] {
-  return JSON.parse(JSON.stringify(products)) as IProject[];
+export function getProjectsParsed(): Project[] {
+  return JSON.parse(JSON.stringify(products)) as Project[];
 }
