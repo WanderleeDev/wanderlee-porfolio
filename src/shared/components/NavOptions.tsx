@@ -7,7 +7,7 @@ import { useState } from "react";
 export function NavOptions() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const styles = `cursor-pointer p-1 bg-high-light text-black/70 hover:ring-4 ring-high-light/30 focus:outline-offset-[6px] rounded-full focus:ring-4 transition-shadow grid place-content-center`;
+  const styles = `cursor-pointer p-1 bg-high-light text-black/70 hover:ring-4 ring-high-light/40 dark:ring-high-light/60 rounded-full focus:ring-4 transition-shadow grid place-content-center`;
   const routes = [
     {
       href: "/",

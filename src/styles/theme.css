@@ -26,18 +26,18 @@
 
   --font-sixtyfour: "Sixtyfour Variable", monospace;
   --font-tourney: "Tourney", system-ui;
+  --font-saira-stencil-one: "Saira Stencil One", system-ui;
 
   --breakpoint-xs: 25rem;
 
-  --animate-marquee: marquee 1s ease-in-out infinite;
-  --animate-marquee-reverse: marquee 1s ease-in-out infinite;
+  --animate-autoScroll: autoScroll linear infinite;
 
-  @keyframes marquee {
-    0% {
+  @keyframes autoScroll {
+    from {
       transform: translateX(0);
     }
-    100% {
-      transform: translateX(calc(-100% - 1rem));
+    to {
+      transform: translateX(calc(-50% - 2rem));
     }
   }
 }

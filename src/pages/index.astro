@@ -10,10 +10,10 @@ const projects = await data.json() as Project[];
 ---
 
 
-<PageLayout headerPage="Projects 🚀" >
+<PageLayout headerPage="🚀 Projects" >
   <section class="pt-20 flex flex-col gap-4" >
     
-    <Heading headingName="Projects 🚀" typeHeading="h2" color="#f94848" />
+    <Heading headingName="🚀 Projects" typeHeading="h2" color="#f94848" />
 
     <p>
       My personal selection of frontend projects, where I highlight examples that represent my approach to user-oriented and quality-oriented web development.
@@ -25,7 +25,12 @@ const projects = await data.json() as Project[];
           {projects.map((project) => <CardProject project={project} />)}
         </div>
       </div>
-      <ExtraProjects />
+      <div class="relative">
+        <span class="block absolute bg-amber-400 w-1/4">
+
+        </span>
+        <ExtraProjects />
+      </div>
     </div>
 
   </section>

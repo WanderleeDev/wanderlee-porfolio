@@ -1,17 +1,29 @@
 ---
 import NotFoundLayout from "../layouts/NotFoundLayout.astro";
-import notFoundImage from "../assets/images/404.webp";
+import Image from "astro/components/Image.astro";
+import Picture from "astro/components/Picture.astro";
 
 const { href } = Astro.url;
 ---
 
 <NotFoundLayout>
   <section class="grid place-content-center h-screen bg-[#040205] text-white">
-    <div
-      class="relative aspect-square max-w-[40rem] bg-no-repeat bg-cover border-[#040205]"
-      style={`background-image: url(${notFoundImage.src});`}
-    >
-    </div>
+    <Image
+      class="sm:block hidden relative aspect-square max-w-[40rem] bg-cover"
+      src='https://www.dropbox.com/scl/fi/eonl72ko0r9cp0fbiuorb/404.webp?rlkey=t3in2oil3sb6l3bdhe4j7ap3x&st=s8yp9tq4&dl=0https://www.dropbox.com/scl/fi/eonl72ko0r9cp0fbiuorb/404.webp?rlkey=t3in2oil3sb6l3bdhe4j7ap3x&st=s8yp9tq4&raw=1'
+      alt="404"
+      width={400}
+      height={400}
+    />
+
+    <Image
+      class="block sm:hidden relative aspect-square max-w-[40rem] bg-cover mx-auto"
+      src='https://www.dropbox.com/scl/fi/eonl72ko0r9cp0fbiuorb/404.webp?rlkey=t3in2oil3sb6l3bdhe4j7ap3x&st=s8yp9tq4&dl=0https://www.dropbox.com/scl/fi/eonl72ko0r9cp0fbiuorb/404.webp?rlkey=t3in2oil3sb6l3bdhe4j7ap3x&st=s8yp9tq4&raw=1'
+      alt="404"
+      width={200}
+      height={200}
+    />
+
     <h1 class="font-semibold text-center text-2xl">NOT FOUND</h1>
     <p class="p-4 text-center text-sm font-semibold">
       The route you want to access does not exist:

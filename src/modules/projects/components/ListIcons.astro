@@ -12,13 +12,14 @@ const { technologies, gap } = Astro.props;
   technologies.length > 0 && (
     <figure class="flex justify-start items-center" style={`gap: ${gap ?? "0.5"}rem;`}>
       {technologies.map((tech) => (
-        <Icon
-          class="w-fit"
-          name={`myTech/${tech}`}
-          width={25}
-          height={25}
-          title={tech}
-        />
+        <div title={tech}>
+          <Icon
+            class="w-fit"
+            name={`tech/${tech}`}
+            width={25}
+            height={25}
+          />
+        </div>
       ))}
     </figure>
   )
