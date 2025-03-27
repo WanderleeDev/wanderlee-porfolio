@@ -1,7 +1,7 @@
 <script is:inline>
-const localTheme = localStorage.getItem("theme");
-
-function initializeTheme() {
+  function initializeTheme() {
+  const localTheme = localStorage.getItem("theme");
+  
   if (["dark", "light"].includes(localTheme)) {
     document.documentElement.classList.add(localTheme);
     return;

@@ -29,6 +29,7 @@
     "@vercel/analytics": "^1.5.0",
     "astro": "^5.5.2",
     "astro-icon": "^1.1.5",
+    "astro-tooltips": "^0.6.2",
     "path-to-regexp": "^6.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

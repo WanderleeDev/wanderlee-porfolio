@@ -3,14 +3,14 @@ import { Icon } from "astro-icon/components";
 import { ResumeSkills } from "./ResumeSkills";
 ---
 
-  <button class="relative  animate-bounce cursor-pointer text-high-light hover:ring-4 ring-high-light/30 focus:outline-offset-[6px] rounded-full focus:ring-4 transition-shadow" type="button" id="resume-profile" 
+  <button class="relative cursor-pointer transition-colors duration-200 bg-high-light text-black hover:text-high-light hover:bg-black/20 border-[.1rem] border-high-light/70 hover:ring-4  ring-high-light/30 rounded-full" type="button" id="resume-profile" 
   title="view resume profile" popovertarget="popover-resume-profile">
-    <Icon name="resumeFile" />
+  <Icon name={"demo"} width={20} height={20} />
+
     <span class="sr-only">
       view resume profile
     </span>
   </button>
-
 
   <div class="popover backdrop:bg-black/10 m-auto content-center backdrop:backdrop-blur-md backdrop:starting:opacity-0 backdrop:transition-opacity h-11/12 rounded-md" id="popover-resume-profile" popover>
     <ResumeSkills client:visible>
